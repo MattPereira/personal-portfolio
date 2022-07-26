@@ -1,4 +1,4 @@
-$primary-color: #ffd700;
+// $primary-color: #ffd700;
 
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
@@ -26,10 +26,18 @@ $primary-color: #ffd700;
   font-style: normal;
 }
 
-input,
-textarea {
-  font-family: 'Helvetica Neue', sans-serif;
+.App.page-container {
+  position: relative;
+  min-height: 100vh;
 }
+
+.content-wrap {
+  padding-top: 2rem; /* Navbar height */
+  padding-bottom: 2.5rem; /* Footer height */
+
+}
+
+
 
 .loader-hidden {
   display: none;

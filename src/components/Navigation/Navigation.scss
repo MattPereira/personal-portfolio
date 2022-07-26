@@ -1,0 +1,70 @@
+.sticky {
+  background-color: #070600 !important;
+  transition: all 0.3s ease-out 0s !important;
+  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+
+.navbar {
+    transition: all 0.3s ease-out 0s !important;
+    font-size: 1.2rem !important;
+    background-color: rgb(29, 29, 29);
+}
+
+
+.navbar-nav .nav-link {
+    color: white !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .nav-link {
+    padding: 0.8rem 1rem !important;
+  }
+
+  @media (max-width: 767px) {
+    .nav-link {
+      padding: 0.7rem 1rem !important;
+    }
+  }
+
+  .logo {
+    height: 1.5em !important;
+    width: 2.6em !important;
+  }
+
+
+.navbar-nav .nav-item {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .navbar-nav .nav-item a {
+    font-weight: 400;
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .navbar-nav .nav-item a::after {
+    content: "";
+    position: relative;
+    display: block;
+    height: 5px;
+    width: 0;
+    border-radius: 16px;
+    background: #EA526F;
+    bottom: 1px;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  .navbar-nav .nav-item a:hover::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: #EA526F !important;
+  }

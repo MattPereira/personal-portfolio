@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./Resume.scss";
 
 const Resume = () => {
   return (

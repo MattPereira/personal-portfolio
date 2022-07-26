@@ -1,5 +1,7 @@
-import React from "react";
-import "./index.scss";
+import { useState } from "react";
+import "./Navigation.scss";
+
+import logo from "../../assets/images/MP_logo_white.svg";
 
 import { NavLink as RRNavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
@@ -13,28 +15,50 @@ import {
 import { CgFileDocument } from "react-icons/cg";
 
 const Navigation = () => {
+  const [navColour, updateNavbar] = useState(false);
+
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      updateNavbar(true);
+    } else {
+      updateNavbar(false);
+    }
+  }
+
+  window.addEventListener("scroll", scrollHandler);
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        expand="md"
+        className={navColour ? "sticky" : "navbar"}
+        variant="dark"
+        fixed="top"
+      >
         <Container>
-          <Navbar.Brand as={RRNavLink} to="/" className="navbar-brand">
-            MP
+          <Navbar.Brand
+            eventkey={1}
+            as={RRNavLink}
+            to="/"
+            className="navbar-brand text-white"
+          >
+            <img src={logo} className="img-fluid logo" alt="brand" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto" defaultActiveKey="#home">
               <Nav.Item>
-                <Nav.Link eventKey={1} as={RRNavLink} to="/">
+                <Nav.Link eventkey={2} as={RRNavLink} to="/">
                   <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey={2} as={RRNavLink} to="/about">
+                <Nav.Link eventkey={3} as={RRNavLink} to="/about">
                   <AiOutlineUser style={{ marginBottom: "2px" }} /> About
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey={3} as={RRNavLink} to="/projects">
+                <Nav.Link eventkey={4} as={RRNavLink} to="/projects">
                   <AiOutlineFundProjectionScreen
                     style={{ marginBottom: "2px" }}
                   />{" "}
@@ -42,7 +66,7 @@ const Navigation = () => {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey={4} as={RRNavLink} to="/resume">
+                <Nav.Link eventkey={5} as={RRNavLink} to="/resume">
                   <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
                 </Nav.Link>
               </Nav.Item>
