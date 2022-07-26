@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Navigation.scss";
 
-import logo from "../../assets/images/MP_logo_white.svg";
+import logo from "../../assets/svg/logos/MP_logo_light.svg";
 
 import { NavLink as RRNavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";

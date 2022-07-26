@@ -9,7 +9,7 @@ import AnimatedLetters from "../AnimatedLetters";
 
 import { FaLinkedinIn, FaGoogle, FaGithub, FaTwitter } from "react-icons/fa";
 
-import logo from "../../assets/images/MP_logo_white.svg";
+import logo from "../../assets/svg/logos/MP_logo_light.svg";
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState("text-animate");

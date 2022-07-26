@@ -11,9 +11,8 @@ import AnimatedLetters from "../AnimatedLetters";
 const About = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const letMe = "Let Me ".split("");
-  const introduce = "Introduce ".split("");
-  const myself = "Myself".split("");
+  const who = "Who ".split("");
+  const iAm = "I Am".split("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,25 +24,6 @@ const About = () => {
     <>
       <section className="py-5">
         <div className="About text-white">
-          <h1 className="text-center text-white mb-md-5">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={letMe}
-              idx={10}
-            />
-            <span className="pink">
-              <AnimatedLetters
-                letterClass={letterClass}
-                strArray={introduce}
-                idx={17}
-              />
-            </span>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={myself}
-              idx={25}
-            />
-          </h1>
           <Row className="align-items-center">
             <Col md={6}>
               <div className="p-5 d-flex">
@@ -51,6 +31,20 @@ const About = () => {
               </div>
             </Col>
             <Col md={6}>
+              <h1 className="text-center text-white mb-md-5">
+                <AnimatedLetters
+                  letterClass={letterClass}
+                  strArray={who}
+                  idx={10}
+                />
+                <span className="pink">
+                  <AnimatedLetters
+                    letterClass={letterClass}
+                    strArray={iAm}
+                    idx={13}
+                  />
+                </span>
+              </h1>
               <p className="lead">
                 I'm an aspiring full-stack web developer looking for a role that
                 will afford me the opportunity to steadily improve my skills and
