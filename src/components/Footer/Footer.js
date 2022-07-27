@@ -2,7 +2,8 @@ import React from "react";
 import "./Footer.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { VscGithub } from "react-icons/vsc";
-import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 function Footer() {
   return (
@@ -14,27 +15,25 @@ function Footer() {
             style={{ color: "white" }}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-2"
           >
             <VscGithub size={25} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/matt-pereira-32428a63/"
-            style={{ color: "white" }}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-2"
-          >
-            <FaLinkedinIn size={25} />
           </a>
           <a
             href="mailto: matthewdavidpereira@gmail.com"
             style={{ color: "white" }}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-2"
+            className="px-5"
           >
-            <FaGoogle size={25} />
+            <FiMail size={25} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/matt-pereira-32428a63/"
+            style={{ color: "white" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn size={25} />
           </a>
         </Col>
       </Row>

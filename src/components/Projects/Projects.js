@@ -1,12 +1,12 @@
 import "./Projects.scss";
 import { useState, useEffect } from "react";
 import AnimatedLetters from "../AnimatedLetters";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import ProjectCard from "./ProjectCard";
 
 import no_fun_league_logo from "../../assets/images/no_fun_league.png";
-import mp_logo from "../../assets/svg/logos/MP_logo_dark.svg";
+import mp_logo from "../../assets/svg/logos/MP_logo_light.svg";
 import ccgc_logo from "../../assets/images/ccgc_logo.png";
 
 const Projects = () => {

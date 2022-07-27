@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 
 import Stack from "../Stack/Stack";
-import selfie from "../../assets/images/selfie.jpg";
+import logo from "../../assets/svg/logos/MP_logo_light.svg";
 
 import AnimatedLetters from "../AnimatedLetters";
 
@@ -25,11 +25,6 @@ const About = () => {
       <section className="py-5">
         <div className="About text-white">
           <Row className="align-items-center">
-            <Col md={6}>
-              <div className="p-5 d-flex">
-                <img src={selfie} className="img-fluid selfie" alt="selfie" />
-              </div>
-            </Col>
             <Col md={6}>
               <h1 className="text-center text-white mb-md-5">
                 <AnimatedLetters
@@ -54,6 +49,11 @@ const About = () => {
                 I'm quietly confident, naturally curious, and perpetually
                 focused on improving my talents one project at a time.
               </p>
+            </Col>
+            <Col md={6}>
+              <div className="p-5 d-flex justify-content-center">
+                <img src={logo} className="img-fluid mp-logo" alt="mp-logo" />
+              </div>
             </Col>
           </Row>
         </div>

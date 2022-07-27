@@ -7,15 +7,17 @@ import About from "../About/About";
 import Projects from "../Projects/Projects";
 import AnimatedLetters from "../AnimatedLetters";
 
-import { FaLinkedinIn, FaGoogle, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
-import logo from "../../assets/svg/logos/MP_logo_light.svg";
+import selfie from "../../assets/images/selfie.jpg";
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
   const nameArray = " Matt Pereira".split("");
 
+  // ["m", 'a',]
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
@@ -26,7 +28,10 @@ const Home = () => {
     <div className="Home">
       <div className="Intro py-md-5">
         <Row className="align-items-center">
-          <Col md={6} className="order-2 order-md-1">
+          <Col md={6} className="d-flex justify-content-center">
+            <img src={selfie} className="img-fluid selfie p-5" alt="selfie" />
+          </Col>
+          <Col md={6}>
             <Row className="justify-content-center">
               <Col className="px-5">
                 <h1 className="text-white mb-0">
@@ -52,9 +57,9 @@ const Home = () => {
                       href="https://www.linkedin.com/in/-matt-pereira-/"
                       target="_blank"
                       rel="noreferrer"
-                      className="icon-btn google"
+                      className="icon-btn gmail"
                     >
-                      <FaGoogle size={25} />
+                      <FiMail size={25} />
                     </a>
 
                     <a
@@ -87,12 +92,6 @@ const Home = () => {
                 </Row>
               </Col>
             </Row>
-          </Col>
-          <Col
-            md={6}
-            className="order-1 order-md-2 d-flex justify-content-center"
-          >
-            <img src={logo} className="img-fluid mp-logo p-5" alt="brand" />
           </Col>
         </Row>
       </div>
