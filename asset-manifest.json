@@ -1,9 +1,12 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.c9fc655c.css",
-    "main.js": "/personal-portfolio/static/js/main.3a95ab58.js",
+    "main.css": "/personal-portfolio/static/css/main.a202d96d.css",
+    "main.js": "/personal-portfolio/static/js/main.e1945656.js",
     "static/js/787.1ed0c42c.chunk.js": "/personal-portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/ccgc_screenshot.png": "/personal-portfolio/static/media/ccgc_screenshot.d9808d96afabb211f5c7.png",
+    "static/media/portfolio_screenshot.png": "/personal-portfolio/static/media/portfolio_screenshot.9c79f2dbf569f41073c4.png",
     "static/media/selfie.jpg": "/personal-portfolio/static/media/selfie.87472b8bf0fa00f8c1f6.jpg",
+    "static/media/nfl_screenshot.png": "/personal-portfolio/static/media/nfl_screenshot.2d76ceb40ce47361d20a.png",
     "static/media/ccgc_logo.png": "/personal-portfolio/static/media/ccgc_logo.06eb9fcdd07ed6647f12.png",
     "static/media/Matt_Pereira_Resume.pdf": "/personal-portfolio/static/media/Matt_Pereira_Resume.a62f77e6fe063fbb1f79.pdf",
     "static/media/no_fun_league.png": "/personal-portfolio/static/media/no_fun_league.2be59b7437f6006bc4af.png",
@@ -73,6 +76,7 @@
     "static/media/css.svg": "/personal-portfolio/static/media/css.43b6f4bdbc0f36b9f2dd15c6ebbcea15.svg",
     "static/media/flutter.svg": "/personal-portfolio/static/media/flutter.643a93c82cd15bbffd12a9ce33a79751.svg",
     "static/media/sketch.svg": "/personal-portfolio/static/media/sketch.87c83552c4ec44031d8cd5ebfc7eb151.svg",
+    "static/media/MP_logo_dark.svg": "/personal-portfolio/static/media/MP_logo_dark.c404a405a5810a6cc8f18cd18de430c6.svg",
     "static/media/MP_logo_light.svg": "/personal-portfolio/static/media/MP_logo_light.caead857ba6c18eb506d94969292285d.svg",
     "static/media/tensorflow.svg": "/personal-portfolio/static/media/tensorflow.6d6f2e37cd68775a4d2a3c32abce1338.svg",
     "static/media/html.svg": "/personal-portfolio/static/media/html.6a342d61e4fe710cf3e5c05b65b0ac87.svg",
@@ -87,12 +91,12 @@
     "static/media/vue.svg": "/personal-portfolio/static/media/vue.47bdfb5a7a54d8ade2aa4c61d5148668.svg",
     "static/media/vuetifyjs.svg": "/personal-portfolio/static/media/vuetifyjs.8a22a3ec81ad62e97094feab6e7ee0fb.svg",
     "static/media/bulma.svg": "/personal-portfolio/static/media/bulma.5910d4416e077262d0264109649ab214.svg",
-    "main.c9fc655c.css.map": "/personal-portfolio/static/css/main.c9fc655c.css.map",
-    "main.3a95ab58.js.map": "/personal-portfolio/static/js/main.3a95ab58.js.map",
+    "main.a202d96d.css.map": "/personal-portfolio/static/css/main.a202d96d.css.map",
+    "main.e1945656.js.map": "/personal-portfolio/static/js/main.e1945656.js.map",
     "787.1ed0c42c.chunk.js.map": "/personal-portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9fc655c.css",
-    "static/js/main.3a95ab58.js"
+    "static/css/main.a202d96d.css",
+    "static/js/main.e1945656.js"
   ]
 }
