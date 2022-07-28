@@ -2,9 +2,17 @@ import React from "react";
 
 import { BsGithub, BsFillPlayFill } from "react-icons/bs";
 
-import { Card, Col, Row, Modal, Button } from "react-bootstrap";
+import { Card, Col, Modal } from "react-bootstrap";
 
-const ProjectCard = ({ title, text, githubLink, demoLink, image, stack }) => {
+const ProjectCard = ({
+  title,
+  text,
+  githubLink,
+  demoLink,
+  logo,
+  stack,
+  screenshot1,
+}) => {
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,7 +28,8 @@ const ProjectCard = ({ title, text, githubLink, demoLink, image, stack }) => {
           <Card.Body className="text-center">
             {/* <Row className="align-items-center p-3"> */}
             {/* <Col className="col-12 col-md-6"> */}
-            <img className="img-fluid mb-3 mb-md-0" src={image} alt={image} />
+            <img className="img-fluid mb-3 mb-md-0" src={logo} alt={logo} />
+            <h3 className="mt-3">{title}</h3>
             {/* </Col> */}
             {/* <Col className="col-12 col-md-6">
                 <Card.Text className="ProjectCard-text">{text}</Card.Text>
@@ -39,24 +48,30 @@ const ProjectCard = ({ title, text, githubLink, demoLink, image, stack }) => {
           </Card.Footer> */}
         </Card>
       </Col>
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>{text}</div>
           <div>
-            <a href={githubLink} className="btn btn-outline-dark mx-1">
-              <BsGithub size={25} />
-            </a>
-
-            <a href={demoLink} className="btn btn-outline-dark mx-1">
-              <BsFillPlayFill size={25} />
-            </a>
+            <img className="img-fluid" src={screenshot1} alt={screenshot1} />
+          </div>
+          <div className="text-center my-5">{text}</div>
+          <div className="row justify-content-center mb-3">
+            <div className="col-auto">
+              <a href={githubLink} className="btn btn-outline-dark mx-1">
+                <BsGithub size={25} /> Code
+              </a>
+            </div>
+            <div className="col-auto">
+              <a href={demoLink} className="btn btn-outline-dark mx-1">
+                <BsFillPlayFill size={25} /> Live
+              </a>
+            </div>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <small className="text-muted">{stack}</small>
+          <small>{stack}</small>
         </Modal.Footer>
       </Modal>
     </>

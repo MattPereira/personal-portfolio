@@ -1,8 +1,20 @@
 .sticky {
-  background-color: #070600 !important;
+  background-color: white !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
+
+
+
+  .navbar-nav .nav-link {
+    color: black !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .nav-link.active {
+    color: #EA526F !important;
+  }
 }
 
 
@@ -18,6 +30,8 @@
     padding-right: 1rem !important;
     padding-left: 1rem !important;
   }
+
+
 
   .nav-link {
     padding: 0.8rem 1rem !important;
@@ -41,7 +55,7 @@
   }
   
   .navbar-nav .nav-item a {
-    font-weight: 400;
+    font-weight: 500;
     transition: all 0.3s ease-out 0s;
     position: relative;
     z-index: 1;

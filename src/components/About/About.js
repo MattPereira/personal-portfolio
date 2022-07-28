@@ -20,22 +20,19 @@ const About = () => {
 
   return (
     <section className="my-5 py-5">
+      <h1 className="section-title">
+        <AnimatedLetters letterClass={letterClass} strArray={who} idx={10} />
+        <span className="pink">
+          <AnimatedLetters letterClass={letterClass} strArray={iAm} idx={13} />
+        </span>
+      </h1>
       <Row className="align-items-center">
+        <Col lg={6}>
+          <div className="p-5 d-flex justify-content-center">
+            <img src={selfie} className="img-fluid selfie" alt="selfie" />
+          </div>
+        </Col>
         <Col lg={6} className="text-white">
-          <h1 className="text-center text-white mb-5">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={who}
-              idx={10}
-            />
-            <span className="pink">
-              <AnimatedLetters
-                letterClass={letterClass}
-                strArray={iAm}
-                idx={13}
-              />
-            </span>
-          </h1>
           <p className="lead">
             I'm an aspiring full-stack web developer seeking a role that will
             afford me the opportunity to continually improve my skills and grow
@@ -52,11 +49,6 @@ const About = () => {
             and hoping to get more involved with the community as I become more
             capable.
           </p>
-        </Col>
-        <Col lg={6}>
-          <div className="p-5 d-flex justify-content-center">
-            <img src={selfie} className="img-fluid selfie" alt="selfie" />
-          </div>
         </Col>
       </Row>
     </section>

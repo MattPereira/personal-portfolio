@@ -40,7 +40,7 @@ const Stack = () => {
 
   return (
     <section className="Stack my-5 py-5">
-      <h1 className="text-center text-white mb-md-5">
+      <h1 className="section-title">
         <AnimatedLetters
           letterClass={letterClass}
           strArray={myTechnology}

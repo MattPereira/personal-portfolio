@@ -33,8 +33,8 @@ function ResumeNew() {
 
   return (
     <div>
-      <Container fluid className="resume-section my-5">
-        <h1 className="text-center text-white mb-5">
+      <Container fluid className="py-5 mb-5">
+        <h1 className="section-title">
           <AnimatedLetters
             letterClass={letterClass}
             strArray={myRecent}
@@ -48,15 +48,10 @@ function ResumeNew() {
             />
           </span>
         </h1>
-        <Row className="resume">
-          <Document file={resumeLink} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-          </Document>
-        </Row>
 
-        <Row className="justify-content-center mt-5">
+        <Row className="justify-content-center my-5">
           <Button
-            variant="warning"
+            variant="outline-light"
             href={resume_pdf}
             target="_blank"
             style={{ maxWidth: "250px" }}
@@ -64,6 +59,11 @@ function ResumeNew() {
             <BsCloudDownload size={25} />
             &nbsp; Download PDF
           </Button>
+        </Row>
+        <Row className="resume">
+          <Document file={resumeLink} className="d-flex justify-content-center">
+            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+          </Document>
         </Row>
       </Container>
     </div>
