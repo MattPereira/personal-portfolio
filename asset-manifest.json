@@ -1,19 +1,13 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.ca438674.css",
-    "main.js": "/personal-portfolio/static/js/main.528d98e6.js",
+    "main.css": "/personal-portfolio/static/css/main.c9fc655c.css",
+    "main.js": "/personal-portfolio/static/js/main.3a95ab58.js",
     "static/js/787.1ed0c42c.chunk.js": "/personal-portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/selfie.jpg": "/personal-portfolio/static/media/selfie.87472b8bf0fa00f8c1f6.jpg",
     "static/media/ccgc_logo.png": "/personal-portfolio/static/media/ccgc_logo.06eb9fcdd07ed6647f12.png",
-    "static/media/BestermindRegular.ttf": "/personal-portfolio/static/media/BestermindRegular.e58a192233afb30a6a59.ttf",
     "static/media/Matt_Pereira_Resume.pdf": "/personal-portfolio/static/media/Matt_Pereira_Resume.a62f77e6fe063fbb1f79.pdf",
     "static/media/no_fun_league.png": "/personal-portfolio/static/media/no_fun_league.2be59b7437f6006bc4af.png",
-    "static/media/helvetica-neu.ttf": "/personal-portfolio/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
-    "static/media/LaBelleAurore.woff": "/personal-portfolio/static/media/LaBelleAurore.9c5433c64baa43d1d274.woff",
-    "static/media/LaBelleAurore.woff2": "/personal-portfolio/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
-    "static/media/CoolveticaRg-Regular.woff": "/personal-portfolio/static/media/CoolveticaRg-Regular.8307bfa187bccdc55f4d.woff",
     "static/media/deno.svg": "/personal-portfolio/static/media/deno.96d4a63dc8a39aad6c76b5fb9e7afae8.svg",
-    "static/media/CoolveticaRg-Regular.woff2": "/personal-portfolio/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
     "static/media/flask.svg": "/personal-portfolio/static/media/flask.2cca57813dda05a32e3922b63222945f.svg",
     "static/media/postgresql.svg": "/personal-portfolio/static/media/postgresql.c0d71b7cf608d9c6aa8676fee6925850.svg",
     "static/media/ruby.svg": "/personal-portfolio/static/media/ruby.34e792ab70448eb69573a8b2df207f74.svg",
@@ -93,12 +87,12 @@
     "static/media/vue.svg": "/personal-portfolio/static/media/vue.47bdfb5a7a54d8ade2aa4c61d5148668.svg",
     "static/media/vuetifyjs.svg": "/personal-portfolio/static/media/vuetifyjs.8a22a3ec81ad62e97094feab6e7ee0fb.svg",
     "static/media/bulma.svg": "/personal-portfolio/static/media/bulma.5910d4416e077262d0264109649ab214.svg",
-    "main.ca438674.css.map": "/personal-portfolio/static/css/main.ca438674.css.map",
-    "main.528d98e6.js.map": "/personal-portfolio/static/js/main.528d98e6.js.map",
+    "main.c9fc655c.css.map": "/personal-portfolio/static/css/main.c9fc655c.css.map",
+    "main.3a95ab58.js.map": "/personal-portfolio/static/js/main.3a95ab58.js.map",
     "787.1ed0c42c.chunk.js.map": "/personal-portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca438674.css",
-    "static/js/main.528d98e6.js"
+    "static/css/main.c9fc655c.css",
+    "static/js/main.3a95ab58.js"
   ]
 }
