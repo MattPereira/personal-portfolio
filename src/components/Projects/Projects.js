@@ -37,6 +37,9 @@ const Projects = () => {
             />
           </span>
         </h1>
+        <p className="lead text-white text-center">
+          Select a project to see more details!
+        </p>
 
         <Row className="justify-content-center pt-5">
           <ProjectCard
