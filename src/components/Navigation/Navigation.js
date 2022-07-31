@@ -13,6 +13,8 @@ import {
   AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
 
+import { FiMail } from "react-icons/fi";
+
 import { CgFileDocument } from "react-icons/cg";
 
 const Navigation = () => {
@@ -73,6 +75,11 @@ const Navigation = () => {
               <Nav.Item>
                 <Nav.Link eventkey={5} as={RRNavLink} to="/resume">
                   <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventkey={6} as={RRNavLink} to="/contact">
+                  <FiMail style={{ marginBottom: "2px" }} /> Contact
                 </Nav.Link>
               </Nav.Item>
             </Nav>
