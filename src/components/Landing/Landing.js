@@ -1,7 +1,7 @@
 import "./Landing.scss";
 
 import { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import Type from "./Type";
 import AnimatedLetters from "../AnimatedLetters";

@@ -1,7 +1,7 @@
 import "./Projects.scss";
 import { useState, useEffect } from "react";
 import AnimatedLetters from "../AnimatedLetters";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import ProjectCard from "./ProjectCard";
 
