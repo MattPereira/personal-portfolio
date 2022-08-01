@@ -1,13 +1,13 @@
 import "./index.scss";
 
 import Projects from "../../components/Projects/Projects";
-import Stack from "../../components/Stack/Stack";
+import Skills from "../../components/Skills/Skills";
 
 const ProjectsPage = () => {
   return (
     <div>
       <Projects />
-      <Stack />
+      <Skills />
     </div>
   );
 };

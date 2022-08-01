@@ -4,7 +4,7 @@ import Contact from "../../components/Contact/Contact";
 
 const ContactPage = () => {
   return (
-    <div>
+    <div className="py-5 my-5">
       <Contact />
     </div>
   );

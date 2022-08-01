@@ -4,8 +4,10 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import AnimatedLetters from "../AnimatedLetters";
 import "./Contact.scss";
+import selfie from "../../assets/images/selfie.jpg";
+import Socials from "../Socials/Socials";
 
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button, Form } from "react-bootstrap";
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -42,57 +44,69 @@ const Contact = () => {
   return (
     <>
       <section className="container">
-        <h1 className="section-title">
+        <h1 className="section-title mb-5">
+          <span className="pink">
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={"Contact".split("")}
+              idx={10}
+            />
+          </span>
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={["C", "o", "n", "t", "a", "c", "t", " ", "M", "e", "!"]}
-            idx={15}
+            strArray={" Me!".split("")}
+            idx={17}
           />
         </h1>
 
-        <Row className="justify-content-center">
-          <Col lg={6}>
+        <Row className="justify-content-center align-items-center">
+          <Col lg={7} className="mb-5">
             <p className="text-white lead">
-              I am interested in freelance opportunities - lorem ipsum dolor sit
-              amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo
+              I am interested in both freelance and employment opportunities.
+              Prospective clients are welcome to message me using the form below
+              or at &nbsp;
+              <span className="pink fw-bold">
+                matthewdavidpereira@gmail.com
+              </span>
             </p>
-          </Col>
-          <Col lg={6}>
-            <div className="contact-form">
-              <form ref={form} onSubmit={sendEmail}>
-                <ul>
-                  <li>
-                    <input
-                      placeholder="Name"
-                      type="text"
-                      name="name"
-                      required
-                    />
-                  </li>
-                  <li>
-                    <input
-                      placeholder="Email"
-                      type="email"
-                      name="email"
-                      required
-                    />
-                  </li>
-                  <li>
-                    <textarea
-                      placeholder="Message"
-                      name="message"
-                      required
-                    ></textarea>
-                  </li>
-                  <li>
-                    <input type="submit" className="flat-button" value="SEND" />
-                  </li>
-                </ul>
-              </form>
+            <div>
+              <Form ref={form} onSubmit={sendEmail} className="text-end">
+                <div className="name-input mb-2">
+                  <Form.Control
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div className="email-input mb-2">
+                  <Form.Control
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div className="message-input mb-2">
+                  <Form.Control
+                    placeholder="Message"
+                    as="textarea"
+                    rows="5"
+                    name="message"
+                    required
+                  />
+                </div>
+                <Button type="submit" className="send-button">
+                  SEND
+                </Button>
+              </Form>
             </div>
+          </Col>
+          <Col lg={5}>
+            <div className="d-flex justify-content-center">
+              <img src={selfie} className="img-fluid selfie" alt="selfie" />
+            </div>
+            <Socials />
           </Col>
         </Row>
       </section>

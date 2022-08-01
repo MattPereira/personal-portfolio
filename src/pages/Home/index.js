@@ -3,7 +3,7 @@ import "./index.scss";
 import Landing from "../../components/Landing/Landing";
 import About from "../../components/About/About";
 import Projects from "../../components/Projects/Projects";
-import Stack from "../../components/Stack/Stack";
+import Skills from "../../components/Skills/Skills";
 
 /**Homepage component
  *
@@ -15,7 +15,7 @@ const HomePage = () => {
     <div>
       <Landing />
       <About />
-      <Stack />
+      <Skills />
       <Projects />
     </div>
   );

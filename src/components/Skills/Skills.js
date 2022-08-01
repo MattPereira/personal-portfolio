@@ -1,4 +1,4 @@
-import "./Stack.scss";
+import "./Skills.scss";
 import { useEffect, useState } from "react";
 
 import Marquee from "react-fast-marquee";
@@ -6,11 +6,8 @@ import AnimatedLetters from "../AnimatedLetters";
 
 import { skillsImage } from "../../utils/skillsImage";
 
-const Stack = () => {
+const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
-
-  const myTechnology = "My Technology ".split("");
-  const stack = "Stack".split("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -39,18 +36,18 @@ const Stack = () => {
   };
 
   return (
-    <section className="Stack my-5 py-5">
+    <section className="Skills my-5 py-5">
       <h1 className="section-title">
         <AnimatedLetters
           letterClass={letterClass}
-          strArray={myTechnology}
+          strArray={"My ".split("")}
           idx={10}
         />
         <span className="pink">
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={stack}
-            idx={24}
+            strArray={"Skills".split("")}
+            idx={13}
           />
         </span>
       </h1>
@@ -78,4 +75,4 @@ const Stack = () => {
   );
 };
 
-export default Stack;
+export default Skills;

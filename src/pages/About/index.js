@@ -3,13 +3,13 @@ import "./index.scss";
 import "./index.scss";
 
 import About from "../../components/About/About";
-import Stack from "../../components/Stack/Stack";
+import Skills from "../../components/Skills/Skills";
 
 const AboutPage = () => {
   return (
     <div>
       <About />
-      <Stack />
+      <Skills />
     </div>
   );
 };

@@ -1,13 +1,9 @@
 import "./Landing.scss";
-
 import { useState, useEffect } from "react";
-import { Row } from "react-bootstrap";
 
 import Type from "./Type";
 import AnimatedLetters from "../AnimatedLetters";
-
-import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
+import Socials from "../Socials/Socials";
 
 import logo from "../../assets/svg/logos/MP_logo_light.svg";
 
@@ -35,45 +31,7 @@ const Landing = () => {
       <div>
         <Type />
       </div>
-      <Row>
-        <div className="my-5">
-          <a
-            href="https://www.linkedin.com/in/-matt-pereira-/"
-            target="_blank"
-            rel="noreferrer"
-            className="icon-btn gmail"
-          >
-            <FiMail size={25} />
-          </a>
-
-          <a
-            href="https://twitter.com/__MattPereira__"
-            target="_blank"
-            rel="noreferrer"
-            className="icon-btn twitter"
-          >
-            <FaTwitter size={25} />
-          </a>
-
-          <a
-            href="https://github.com/MattPereira"
-            target="_blank"
-            rel="noreferrer"
-            className="icon-btn github"
-          >
-            <FaGithub size={28} />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/-matt-pereira-/"
-            target="_blank"
-            rel="noreferrer"
-            className="icon-btn linkedin"
-          >
-            <FaLinkedinIn size={25} />
-          </a>
-        </div>
-      </Row>
+      <Socials />
     </section>
   );
 };
