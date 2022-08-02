@@ -14,9 +14,10 @@ const HomePage = () => {
   return (
     <div>
       <Landing />
+      <Projects />
+
       <About />
       <Skills />
-      <Projects />
     </div>
   );
 };

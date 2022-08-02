@@ -44,11 +44,6 @@ const About = () => {
             collaborating with a team to build projects that are both functional
             and aesthetically pleasing.
           </p>
-          <p className="lead">
-            Additionally, I'm a staunch supporter of the free software movement
-            and hoping to get more involved with the community as I become more
-            capable.
-          </p>
         </Col>
       </Row>
     </section>
