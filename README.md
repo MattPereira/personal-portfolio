@@ -1,6 +1,8 @@
 # Personal Portfolio
 
+TODO: 
+DESCRIPTION
 
-## React
-## Bootstrap
-## Sass
+FEATURES
+
+TECH STACK
