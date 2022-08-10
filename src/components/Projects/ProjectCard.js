@@ -24,7 +24,7 @@ const ProjectCard = ({
         <Card className="ProjectCard text-white" onClick={handleShow}>
           <Card.Body className="text-center">
             <img className="img-fluid mb-3 mb-md-0" src={logo} alt={logo} />
-            <h3 className="mt-3">{title}</h3>
+            {/* <h3 className="mt-3">{title}</h3> */}
           </Card.Body>
         </Card>
       </Col>

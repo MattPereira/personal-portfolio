@@ -1,7 +1,7 @@
 # Personal Portfolio
 <p align="center">
 <a href="https://mattpereira.github.io/personal-portfolio/">
-<img src="https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/svg/logos/MP_logo_dark.svg" width="200" height="200"/>
+<img src="https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/svg/logos/MP_LOGO_LIGHT.svg" width="200" height="200"/>
 </a>
 </p>
 

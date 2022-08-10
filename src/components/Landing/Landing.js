@@ -5,7 +5,7 @@ import Type from "./Type";
 import AnimatedLetters from "../AnimatedLetters";
 import Socials from "../Socials/Socials";
 
-import logo from "../../assets/svg/logos/MP_logo_light.svg";
+import logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
 
 const Landing = () => {
   const [letterClass, setLetterClass] = useState("text-animate");

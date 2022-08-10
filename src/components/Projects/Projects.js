@@ -5,13 +5,15 @@ import { Row } from "react-bootstrap";
 
 import ProjectCard from "./ProjectCard";
 
-import no_fun_league_logo from "../../assets/images/no_fun_league.png";
-import mp_logo from "../../assets/svg/logos/MP_logo_light.svg";
+import nfl_logo from "../../assets/images/no_fun_league.png";
+import mp_logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
 import ccgc_logo from "../../assets/images/ccgc_logo.png";
+import ts_logo from "../../assets/svg/logos/TS_LOGO_LIGHT.svg";
 
 import portfolio_screenshot from "../../assets/images/portfolio_screenshot.png";
 import nfl_screenshot from "../../assets/images/nfl_screenshot.png";
 import ccgc_screenshot from "../../assets/images/ccgc_screenshot.png";
+import ts_screenshot from "../../assets/images/ts_screenshot.png";
 
 const Projects = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -42,13 +44,13 @@ const Projects = () => {
           </span>
         </h1>
 
-        <p className="lead text-white my-5 text-center fs-4">
-          When learning new tools, libraries, and frameworks, I seek to fortify
-          my understanding by building web applications. Select a project to{" "}
-          <strong className="pink">see details and links!</strong>
+        <p className="lead text-white text-center my-5 fs-4">
+          Select a project to see <strong className="blue">details</strong>
+          &nbsp;and&nbsp;
+          <strong className="blue">links!</strong>
         </p>
 
-        <Row className="justify-content-center pt-5">
+        <Row className="justify-content-center">
           <ProjectCard
             title="Contra Costa Golf Club"
             logo={ccgc_logo}
@@ -62,7 +64,7 @@ const Projects = () => {
 
           <ProjectCard
             title="No Fun League"
-            logo={no_fun_league_logo}
+            logo={nfl_logo}
             text="
             A full stack web application I built for a personal fantasy football league. All of the roster, draft, and player data is sourced from the Sleeper API. The site serves the members of the league by providing them with updated information about their rosters and past league drafts. Additionally, the site allows league members to edit their manager profile information, create blog posts, propose rule changes, and vote on those proposed rule changes. "
             stack="Python, Flask, PostgreSQL, Jinja, Bootstrap"
@@ -70,7 +72,8 @@ const Projects = () => {
             demoLink="https://no-fun-league.herokuapp.com/"
             screenshot1={nfl_screenshot}
           />
-
+        </Row>
+        <Row className="justify-content-center">
           <ProjectCard
             title="Personal Portfolio"
             logo={mp_logo}
@@ -79,6 +82,16 @@ const Projects = () => {
             githubLink="https://github.com/MattPereira/portfolio"
             demoLink="https://mattpereira.github.io/"
             screenshot1={portfolio_screenshot}
+          />
+
+          <ProjectCard
+            title="Tabernacle School"
+            logo={ts_logo}
+            text="Informational and functional website I built for my current employer. The site advertises to prospective families and provides current families with essential documents, calendars, and instructions. Features include personal pages for all school staff and astute incorporation of Bootstrap’s layout, content, and components functionalities."
+            stack="Javascript, Express, EJS, Bootstrap, Sass"
+            githubLink="https://github.com/MattPereira/tabernacle.school"
+            demoLink="https://tabernacle.school/"
+            screenshot1={ts_screenshot}
           />
         </Row>
       </div>

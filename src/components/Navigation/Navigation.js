@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Navigation.scss";
 
-import logoLight from "../../assets/svg/logos/MP_logo_light.svg";
-import logoDark from "../../assets/svg/logos/MP_logo_dark.svg";
+import logoLight from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
+import logoDark from "../../assets/svg/logos/MP_LOGO_DARK.svg";
 
 import { NavLink as RRNavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
