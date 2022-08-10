@@ -1,6 +1,10 @@
 # Personal Portfolio
+<p align="center">
+<a href="https://mattpereira.github.io/personal-portfolio/">
+<img src="https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/svg/logos/MP_logo_dark.svg" width="200" height="200"/>
+</a>
+</p>
 
-[<img src="https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/svg/logos/MP_logo_dark.svg" width="200" height="200"/>](https://mattpereira.github.io/personal-portfolio/)
 
 
 A single page application for attracting employers and freelance clients. Features include animated text, an infinite carousel slider displaying all my skills, and a contact form that allows users to send a message to my email.
