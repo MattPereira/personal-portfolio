@@ -53,10 +53,7 @@ const Projects = () => {
             title="Contra Costa Golf Club"
             logo={ccgc_logo}
             text="
-            A full stack, single page web application I built for the Contra Costa Golf Club. 
-            The website displays all of the tournaments, greenies, members, courses, and standings data for the 2021-22 season. 
-            All users are able to input their strokes, putts, and greenies for each round. 
-            Upon submission of any new, edited, or deleted data, tour points are automatically recalculated."
+            A full stack, single page web application I built for a local golf club. The site displays all of the tournaments, greenies, members, courses, and standings data. All users are able to input their strokes, putts, and greenies for each round. Upon submission of any new, edited, or deleted data, tour points are automatically recalculated. Features include a custom built internal API, full CRUD, user authentication, multi-tiered authorization levels, and a tour points system that incorporates handicaps to determine an overall champion based on all rounds inputted for the year. "
             stack="Javascript, React, Express, PostgreSQL, Bootstrap"
             githubLink="https://github.com/MattPereira/ccgc-backend"
             demoLink="https://ccgc.surge.sh/"
@@ -67,9 +64,7 @@ const Projects = () => {
             title="No Fun League"
             logo={no_fun_league_logo}
             text="
-            A full stack web application I built for a fantasy football league I have been a member of for many years. 
-            All of the roster, draft, and player data is sourced from the Sleeper API. 
-            The site allows league members to edit their manager profile information, create blog posts, propose rule changes, and vote."
+            A full stack web application I built for a personal fantasy football league. All of the roster, draft, and player data is sourced from the Sleeper API. The site serves the members of the league by providing them with updated information about their rosters and past league drafts. Additionally, the site allows league members to edit their manager profile information, create blog posts, propose rule changes, and vote on those proposed rule changes. "
             stack="Python, Flask, PostgreSQL, Jinja, Bootstrap"
             githubLink="https://github.com/MattPereira/no_fun_league"
             demoLink="https://no-fun-league.herokuapp.com/"
@@ -79,7 +74,7 @@ const Projects = () => {
           <ProjectCard
             title="Personal Portfolio"
             logo={mp_logo}
-            text="Personal website for attracting potential employers and freelance clients."
+            text="A single page application used to attract employers and freelance clients. Features include animated text, an infinite carousel slider displaying all my skills, and a contact form that allows users to send a message to my email."
             stack="Javascript, React, Bootstrap, CSS, HTML"
             githubLink="https://github.com/MattPereira/portfolio"
             demoLink="https://mattpereira.github.io/"
