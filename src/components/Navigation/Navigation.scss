@@ -37,6 +37,7 @@
     padding: 0.8rem 1rem !important;
   }
 
+  // WHEN THE NAVBAR COLLAPSES
   @media (max-width: 767px) {
     .nav-link {
       padding: 0.7rem 1rem !important;
@@ -82,3 +83,7 @@
   .nav-link.active {
     color: #EA526F !important;
   }
+
+  // .navbar-toggler-icon {
+  //   color: black;
+  // }

@@ -21,7 +21,7 @@ const Navigation = () => {
   const [navColour, updateNavbar] = useState(false);
 
   function scrollHandler() {
-    if (window.scrollY >= 20) {
+    if (window.scrollY >= 20 || window.innerWidth <= 992) {
       updateNavbar(true);
     } else {
       updateNavbar(false);
@@ -29,18 +29,19 @@ const Navigation = () => {
   }
 
   window.addEventListener("scroll", scrollHandler);
+  window.addEventListener("resize", scrollHandler);
   return (
     <div>
       <Navbar
         collapseOnSelect
-        expand="md"
+        expand="lg"
         className={navColour ? "sticky" : "navbar"}
-        variant="dark"
+        variant="light"
         fixed="top"
       >
         <Container>
           <Navbar.Brand
-            eventkey={1}
+            eventKey={1}
             as={RRNavLink}
             to="/"
             className="navbar-brand"
@@ -55,17 +56,17 @@ const Navigation = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto" defaultActiveKey="#home">
               <Nav.Item>
-                <Nav.Link eventkey={2} as={RRNavLink} to="/">
+                <Nav.Link eventKey={2} as={RRNavLink} to="/">
                   <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventkey={3} as={RRNavLink} to="/about">
+                <Nav.Link eventKey={3} as={RRNavLink} to="/about">
                   <AiOutlineUser style={{ marginBottom: "2px" }} /> About
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventkey={4} as={RRNavLink} to="/projects">
+                <Nav.Link eventKey={4} as={RRNavLink} to="/projects">
                   <AiOutlineFundProjectionScreen
                     style={{ marginBottom: "2px" }}
                   />{" "}
@@ -73,12 +74,12 @@ const Navigation = () => {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventkey={5} as={RRNavLink} to="/resume">
+                <Nav.Link eventKey={5} as={RRNavLink} to="/resume">
                   <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventkey={6} as={RRNavLink} to="/contact">
+                <Nav.Link eventKey={6} as={RRNavLink} to="/contact">
                   <FiMail style={{ marginBottom: "2px" }} /> Contact
                 </Nav.Link>
               </Nav.Item>

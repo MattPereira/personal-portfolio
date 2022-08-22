@@ -15,7 +15,11 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// const i = {};
+// i.am = 'a full stack web developer';
+// i.usedTo = ['screen print t-shirts', 'conduct economic research', 'teach English in China'];
+// i.love = ['yoga', 'meditation', 'snowboarding', 'linux', 'dogs'];
+// i.skills = ['JavaScript', 'React', 'Express', 'postgreSQL', 'Python', 'Flask', 'Bootstrap'];
+// i.aspire = 'to build worthwhile websites';

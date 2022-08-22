@@ -6,11 +6,11 @@ import { Row } from "react-bootstrap";
 import ProjectCard from "./ProjectCard";
 
 import nfl_logo from "../../assets/images/no_fun_league.png";
-import mp_logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
+// import mp_logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
 import ccgc_logo from "../../assets/images/ccgc_logo.png";
-import ts_logo from "../../assets/svg/logos/TS_LOGO_LIGHT.svg";
+import ts_logo from "../../assets/images/TS_LOGO_CIRCLE.png";
 
-import portfolio_screenshot from "../../assets/images/portfolio_screenshot.png";
+// import portfolio_screenshot from "../../assets/images/portfolio_screenshot.png";
 import nfl_screenshot from "../../assets/images/nfl_screenshot.png";
 import ccgc_screenshot from "../../assets/images/ccgc_screenshot.png";
 import ts_screenshot from "../../assets/images/ts_screenshot.png";
@@ -72,17 +72,6 @@ const Projects = () => {
             demoLink="https://no-fun-league.herokuapp.com/"
             screenshot1={nfl_screenshot}
           />
-        </Row>
-        <Row className="justify-content-center">
-          <ProjectCard
-            title="Personal Portfolio"
-            logo={mp_logo}
-            text="A single page application used to attract employers and freelance clients. Features include animated text, an infinite carousel slider displaying all my skills, and a contact form that allows users to send a message to my email."
-            stack="Javascript, React, Bootstrap, CSS, HTML"
-            githubLink="https://github.com/MattPereira/portfolio"
-            demoLink="https://mattpereira.github.io/"
-            screenshot1={portfolio_screenshot}
-          />
 
           <ProjectCard
             title="Tabernacle School"
@@ -93,6 +82,16 @@ const Projects = () => {
             demoLink="https://tabernacle.school/"
             screenshot1={ts_screenshot}
           />
+
+          {/* <ProjectCard
+            title="Personal Portfolio"
+            logo={mp_logo}
+            text="A single page application used to attract employers and freelance clients. Features include animated text, an infinite carousel slider displaying all my skills, and a contact form that allows users to send a message to my email."
+            stack="Javascript, React, Bootstrap, CSS, HTML"
+            githubLink="https://github.com/MattPereira/portfolio"
+            demoLink="https://mattpereira.github.io/"
+            screenshot1={portfolio_screenshot}
+          /> */}
         </Row>
       </div>
     </section>
