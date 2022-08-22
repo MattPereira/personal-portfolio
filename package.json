@@ -1,6 +1,5 @@
 {
   "name": "personal-portfolio",
-  "homepage": "https://mattpereira.github.io/personal-portfolio/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,11 +27,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "react-scripts build",
+    "pre-deploy": "cp build/index.html build/200.html",
+    "deploy": "surge build"
   },
   "eslintConfig": {
     "extends": [

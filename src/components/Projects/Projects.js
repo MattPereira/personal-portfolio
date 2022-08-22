@@ -89,7 +89,7 @@ const Projects = () => {
             text="A single page application used to attract employers and freelance clients. Features include animated text, an infinite carousel slider displaying all my skills, and a contact form that allows users to send a message to my email."
             stack="Javascript, React, Bootstrap, CSS, HTML"
             githubLink="https://github.com/MattPereira/portfolio"
-            demoLink="https://mattpereira.github.io/"
+            demoLink="https://matt-pereira.surge.sh/"
             screenshot1={portfolio_screenshot}
           /> */}
         </Row>
