@@ -43,7 +43,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="container">
+      <section className="container py-xl-5">
         <h1 className="section-title mb-5">
           <span className="pink">
             <AnimatedLetters
@@ -60,14 +60,21 @@ const Contact = () => {
         </h1>
 
         <Row className="justify-content-center align-items-center">
-          <Col lg={7} className="mb-5">
-            <p className="text-white lead">
-              I am interested in both freelance and employment opportunities.
-              Prospective clients are welcome to message me using the form below
-              or at &nbsp;
-              <span className="pink fw-bold">
+          <Col md={6} xl={5}>
+            <div className="d-flex justify-content-center text-center mb-3">
+              <img src={selfie} className="img-fluid selfie" alt="selfie" />
+            </div>
+            <div className="text-center">
+              <span className="blue fw-bold fs-5">
                 matthewdavidpereira@gmail.com
               </span>
+            </div>
+            <Socials />
+          </Col>
+          <Col md={10} xl={6} className="mb-5">
+            <p className="text-white lead">
+              I am interested in both freelance and employment opportunities.
+              Prospective clients are welcome to message me!
             </p>
             <div>
               <Form ref={form} onSubmit={sendEmail} className="text-end">
@@ -96,17 +103,11 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <Button type="submit" className="send-button">
+                <Button type="submit" className="send-button fw-bold">
                   SEND
                 </Button>
               </Form>
             </div>
-          </Col>
-          <Col lg={5}>
-            <div className="d-flex justify-content-center">
-              <img src={selfie} className="img-fluid selfie" alt="selfie" />
-            </div>
-            <Socials />
           </Col>
         </Row>
       </section>
