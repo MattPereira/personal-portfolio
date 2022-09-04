@@ -1,43 +1,34 @@
 import "./Socials.scss";
 
 import { Row } from "react-bootstrap";
-import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
-// import { FiMail } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
+// import { GrMail } from "react-icons/gr";
 // import { Link } from "react-router-dom";
 
 const Socials = () => {
   return (
     <Row>
       <div className="my-3 text-center">
-        {/* <Link to="/contact" className="icon-btn gmail">
-          <FiMail size={25} />
+        {/* <Link to="/contact" className="btn btn-outline-light mx-1 btn-lg">
+          <GrMail style={{ marginBottom: "2px" }} size={25} /> Contact
         </Link> */}
-
         <a
           href="https://github.com/MattPereira"
           target="_blank"
           rel="noreferrer"
-          className="icon-btn github"
+          className="btn btn-outline-light mx-1 btn-lg"
         >
-          <FaGithub size={28} />
-        </a>
-
-        <a
-          href="https://twitter.com/__MattPereira__"
-          target="_blank"
-          rel="noreferrer"
-          className="icon-btn twitter"
-        >
-          <FaTwitter size={25} />
+          <FaGithub style={{ marginBottom: "2px" }} size={25} /> GitHub
         </a>
 
         <a
           href="https://www.linkedin.com/in/-matt-pereira-/"
           target="_blank"
           rel="noreferrer"
-          className="icon-btn linkedin"
+          className="btn btn-outline-light mx-1 btn-lg"
         >
-          <FaLinkedinIn size={25} />
+          Linked <BsLinkedin style={{ marginBottom: "2px" }} size={25} />
         </a>
       </div>
     </Row>

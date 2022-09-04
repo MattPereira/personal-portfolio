@@ -1,34 +1,51 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-import { BsGithub, BsFillPlayFill } from "react-icons/bs";
+// import { BsGithub, BsFillPlayFill } from "react-icons/bs";
 
-import { Card, Col, Modal } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 
-const ProjectCard = ({
-  title,
-  text,
-  githubLink,
-  demoLink,
-  logo,
-  stack,
-  screenshot1,
-}) => {
-  const [show, setShow] = React.useState(false);
+const ProjectCard = ({ detailsLink, githubLink, demoLink, logo, title }) => {
+  // const [show, setShow] = React.useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   return (
     <>
-      <Col className="col-11 col-md-10 col-lg-6 col-xl-4 mb-5">
-        <Card className="ProjectCard text-white" onClick={handleShow}>
-          <Card.Body className="text-center">
-            <img className="img-fluid mb-3 mb-md-0" src={logo} alt={logo} />
-            {/* <h3 className="mt-3">{title}</h3> */}
-          </Card.Body>
-        </Card>
+      <Col className="col-11 col-md-8 col-lg-7 col-xl-4 mb-5">
+        <Link
+          to={`/projects/${title.toLowerCase().split(" ").join("-")}`}
+          className="text-decoration-none"
+        >
+          <h5 className="text-center text-white fs-3 fw-bold">{title}</h5>
+          <Card className="ProjectCard text-white ">
+            <Card.Body className="text-center">
+              <img className="img-fluid mb-3 mb-md-0" src={logo} alt={logo} />
+            </Card.Body>
+          </Card>
+        </Link>
+        {/* <Row className="justify-content-center mt-3">
+          <Col className="col-auto">
+            <Link
+              to={`/projects/${detailsLink}`}
+              className="btn btn-outline-light rounded-pill"
+            >
+              Details
+            </Link>
+          </Col>
+          <Col className="col-auto">
+            <a href={githubLink} className="btn btn-outline-light rounded-pill">
+              <BsGithub size={20} /> Code
+            </a>
+          </Col>
+          <Col className="col-auto">
+            <a href={demoLink} className="btn btn-outline-light rounded-pill">
+              <BsFillPlayFill size={25} /> Live
+            </a>
+          </Col>
+        </Row> */}
       </Col>
-      <Modal show={show} onHide={handleClose} size="lg" centered>
+      {/* <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
@@ -53,7 +70,7 @@ const ProjectCard = ({
         <Modal.Footer>
           <small>{stack}</small>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   );
 };

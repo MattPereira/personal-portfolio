@@ -5,13 +5,14 @@ import emailjs from "@emailjs/browser";
 import AnimatedLetters from "../AnimatedLetters";
 import "./Contact.scss";
 import selfie from "../../assets/images/selfie.jpg";
-import Socials from "../Socials/Socials";
 
-import { Row, Col, Button, Form } from "react-bootstrap";
+import { Row, Col, Button, Form, Alert } from "react-bootstrap";
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
   const form = useRef();
+
+  const [status, setStatus] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,12 +32,12 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert("Message successfully sent!");
+          setStatus(true);
           window.location.reload(false);
         },
         (error) => {
           console.log(error.text);
-          alert("Failed to send the message, please try again");
+          setStatus(false);
         }
       );
   };
@@ -44,7 +45,7 @@ const Contact = () => {
   return (
     <>
       <section className="container py-xl-5">
-        <h1 className="section-title mb-5">
+        <h1 className="section-title mb-md-5 mb-0">
           <span className="pink">
             <AnimatedLetters
               letterClass={letterClass}
@@ -59,23 +60,34 @@ const Contact = () => {
           />
         </h1>
 
-        <Row className="justify-content-center align-items-center">
-          <Col md={6} xl={5}>
-            <div className="d-flex justify-content-center text-center mb-3">
-              <img src={selfie} className="img-fluid selfie" alt="selfie" />
+        <Row className="justify-content-center align-items-center py-5">
+          <Col lg={5} xl={6}>
+            <div className="d-flex justify-content-center text-center mb-5">
+              <img
+                src={selfie}
+                className="img-fluid rounded-circle selfie"
+                alt="selfie"
+              />
             </div>
-            <div className="text-center">
-              <span className="blue fw-bold fs-5">
-                matthewdavidpereira@gmail.com
-              </span>
-            </div>
-            <Socials />
           </Col>
-          <Col md={10} xl={6} className="mb-5">
+          <Col lg={7} xl={6} className="mb-5">
             <p className="text-white lead">
               I am interested in both freelance and employment opportunities.
-              Prospective clients are welcome to message me!
+              Prospective clients are welcome to message me using the form
+              below!
             </p>
+            {status === true ? (
+              <Alert variant="success">
+                Message successfully sent! I will respond as soon as possible!
+              </Alert>
+            ) : status === false ? (
+              <Alert variant="danger">
+                Failed to send the message, but you can email me directly at{" "}
+                <a href="mailto:matthewdavidpereira@gmail.org">
+                  matthewdavidpereira@gmail.org
+                </a>
+              </Alert>
+            ) : null}
             <div>
               <Form ref={form} onSubmit={sendEmail} className="text-end">
                 <div className="name-input mb-2">
