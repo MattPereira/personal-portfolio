@@ -6,11 +6,9 @@ import { Row } from "react-bootstrap";
 import ProjectCard from "./ProjectCard";
 
 import nfl_logo from "../../assets/images/no_fun_league.png";
-// import mp_logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
 import ccgc_logo from "../../assets/images/ccgc_logo.png";
 import ts_logo from "../../assets/images/TS_LOGO_CIRCLE.png";
 
-// import portfolio_screenshot from "../../assets/images/portfolio_screenshot.png";
 import nfl_screenshot from "../../assets/images/nfl_screenshot.png";
 import ccgc_screenshot from "../../assets/images/ccgc_screenshot.png";
 import ts_screenshot from "../../assets/images/ts_screenshot.png";
@@ -45,7 +43,8 @@ const Projects = () => {
         </h1>
 
         <p className="lead text-white text-center my-5 fs-4">
-          Select a project to see <strong className="blue">details</strong>
+          Select a project to see all of the{" "}
+          <strong className="blue">details</strong>
           &nbsp;and&nbsp;
           <strong className="blue">links!</strong>
         </p>
@@ -82,16 +81,6 @@ const Projects = () => {
             demoLink="https://tabernacle.school/"
             screenshot1={ts_screenshot}
           />
-
-          {/* <ProjectCard
-            title="Personal Portfolio"
-            logo={mp_logo}
-            text="A single page application used to attract employers and freelance clients. Features include animated text, an infinite carousel slider displaying all my skills, and a contact form that allows users to send a message to my email."
-            stack="Javascript, React, Bootstrap, CSS, HTML"
-            githubLink="https://github.com/MattPereira/portfolio"
-            demoLink="https://matt-pereira.surge.sh/"
-            screenshot1={portfolio_screenshot}
-          /> */}
         </Row>
       </div>
     </section>
