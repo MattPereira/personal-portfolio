@@ -9,10 +9,6 @@ import nfl_logo from "../../assets/images/no_fun_league.png";
 import ccgc_logo from "../../assets/images/ccgc_logo.png";
 import ts_logo from "../../assets/images/TS_LOGO_CIRCLE.png";
 
-import nfl_screenshot from "../../assets/images/nfl_screenshot.png";
-import ccgc_screenshot from "../../assets/images/ccgc_screenshot.png";
-import ts_screenshot from "../../assets/images/ts_screenshot.png";
-
 const Projects = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
@@ -54,7 +50,6 @@ const Projects = () => {
             logo={ccgc_logo}
             githubLink="https://github.com/MattPereira/ccgc-backend"
             demoLink="https://ccgc.surge.sh/"
-            screenshot1={ccgc_screenshot}
           />
 
           <ProjectCard
@@ -62,15 +57,12 @@ const Projects = () => {
             logo={nfl_logo}
             githubLink="https://github.com/MattPereira/no_fun_league"
             demoLink="https://no-fun-league.herokuapp.com/"
-            screenshot1={nfl_screenshot}
           />
-
           <ProjectCard
             title="Tabernacle School"
             logo={ts_logo}
             githubLink="https://github.com/MattPereira/tabernacle.school"
             demoLink="https://tabernacle.school/"
-            screenshot1={ts_screenshot}
           />
         </Row>
       </div>

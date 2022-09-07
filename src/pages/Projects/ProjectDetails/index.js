@@ -5,7 +5,8 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-import { Row, Col, Accordion } from "react-bootstrap";
+import { Row, Col, Button, Spinner } from "react-bootstrap";
+import { BsGithub, BsPlayCircleFill } from "react-icons/bs";
 
 const ProjectDetails = () => {
   const { name } = useParams();
@@ -32,46 +33,53 @@ const ProjectDetails = () => {
     [project.repoName]
   );
 
-  if (!readMe) return <>LOADING...</>;
+  if (!readMe)
+    return (
+      <>
+        <Spinner animation="border" variant="light" />
+      </>
+    );
 
   console.log(project);
   return (
     <section className="py-5 text-white">
       <h1 className="text-center text-white display-3 mb-5">{project.title}</h1>
+      <Row className="justify-content-center mb-5">
+        <Col className="col-auto">
+          <Button variant="outline-light" size={"lg"} href={project.githubLink}>
+            <BsGithub size={23} style={{ marginBottom: "3px" }} /> Code
+          </Button>
+        </Col>
+        <Col className="col-auto">
+          <Button variant="outline-light" size={"lg"} href={project.demoLink}>
+            <BsPlayCircleFill size={23} style={{ marginBottom: "3px" }} />{" "}
+            {"  "}
+            Demo
+          </Button>
+        </Col>
+      </Row>
       <Row className="mb-5">
         <Col lg={6}>
-          {/* <img
-            src={project.images[0]}
+          <img
+            src={project.screenshots[0]}
             alt="ccgc screenshots"
             className="img-fluid"
-          /> */}
+          />
+        </Col>
+        <Col lg={6}>
+          <img
+            src={project.screenshots[1]}
+            alt="ccgc screenshots"
+            className="img-fluid d-none d-lg-flex"
+          />
         </Col>
       </Row>
 
       <Row className="justify-content-center">
         <Col lg={10}>
-          <Accordion>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>README.md</Accordion.Header>
-              <Accordion.Body>
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                  {readMe.data}
-                </ReactMarkdown>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>Biggest Obstacles</Accordion.Header>
-              <Accordion.Body></Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>Trade Offs</Accordion.Header>
-              <Accordion.Body></Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="3">
-              <Accordion.Header>Future Plans</Accordion.Header>
-              <Accordion.Body></Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+            {readMe.data}
+          </ReactMarkdown>
         </Col>
       </Row>
     </section>

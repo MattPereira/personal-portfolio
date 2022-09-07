@@ -19,7 +19,7 @@ const Socials = () => {
           rel="noreferrer"
           className="btn btn-outline-light mx-1 btn-lg"
         >
-          <FaGithub style={{ marginBottom: "2px" }} size={25} /> GitHub
+          <FaGithub style={{ marginBottom: "3px" }} size={25} /> GitHub
         </a>
 
         <a
@@ -28,7 +28,7 @@ const Socials = () => {
           rel="noreferrer"
           className="btn btn-outline-light mx-1 btn-lg"
         >
-          Linked <BsLinkedin style={{ marginBottom: "2px" }} size={25} />
+          Linked <BsLinkedin style={{ marginBottom: "4px" }} size={25} />
         </a>
       </div>
     </Row>
