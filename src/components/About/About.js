@@ -40,15 +40,14 @@ const About = () => {
         </Col>
         <Col lg={6} className="text-white">
           <p className="lead">
-            I'm an aspiring full-stack web developer seeking a role that will
-            afford me the opportunity to make a positive impact. I am passionate
-            about building full stack web applications that satisfy
-            stakeholders' expectations.
+            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl, eget
+            aliquet nisl nisl sit amet lorem. Sed condimentum, nisl ut aliquam
           </p>
           <p className="lead">
-            I am naturally inquisitive and perpetually focused on cultivating
-            new skills. I'm instinctively sedulous and conscientious. I am
-            detail-oriented, humble, and pragmatic.
+            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl, eget
+            aliquet nisl nisl sit amet lorem. Sed condimentum, nisl ut aliquam
           </p>
         </Col>
       </Row>
