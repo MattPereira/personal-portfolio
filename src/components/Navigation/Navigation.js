@@ -7,15 +7,11 @@ import logoDark from "../../assets/svg/logos/MP_LOGO_DARK.svg";
 import { NavLink as RRNavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-import {
-  AiOutlineHome,
-  AiOutlineUser,
-  AiOutlineFundProjectionScreen,
-} from "react-icons/ai";
-
-import { FiMail } from "react-icons/fi";
-
-import { CgFileDocument } from "react-icons/cg";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 
 const Navigation = () => {
   const [navColour, updateNavbar] = useState(false);
@@ -57,30 +53,28 @@ const Navigation = () => {
             <Nav className="ms-auto" defaultActiveKey="#home">
               <Nav.Item>
                 <Nav.Link eventKey={2} as={RRNavLink} to="/">
-                  <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                  <CottageOutlinedIcon sx={{ marginBottom: "2px" }} /> Home
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey={3} as={RRNavLink} to="/about">
-                  <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                  <PersonOutlineOutlinedIcon sx={{ marginBottom: "2px" }} />{" "}
+                  About
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey={4} as={RRNavLink} to="/projects">
-                  <AiOutlineFundProjectionScreen
-                    style={{ marginBottom: "2px" }}
-                  />{" "}
-                  Projects
+                  <WorkOutlineIcon sx={{ marginBottom: "2px" }} /> Projects
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey={5} as={RRNavLink} to="/resume">
-                  <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                  <ArticleOutlinedIcon sx={{ marginBottom: "2px" }} /> Resume
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey={6} as={RRNavLink} to="/contact">
-                  <FiMail style={{ marginBottom: "2px" }} /> Contact
+                  <MailOutlinedIcon sx={{ marginBottom: "2px" }} /> Contact
                 </Nav.Link>
               </Nav.Item>
             </Nav>

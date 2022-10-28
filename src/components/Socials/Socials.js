@@ -1,37 +1,51 @@
-import "./Socials.scss";
-
-import { Row } from "react-bootstrap";
-import { FaGithub } from "react-icons/fa";
-import { BsLinkedin } from "react-icons/bs";
-// import { GrMail } from "react-icons/gr";
-// import { Link } from "react-router-dom";
+import { Button, Box, Grid } from "@mui/material";
+import { styled } from "@mui/system";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Socials = () => {
-  return (
-    <Row>
-      <div className="my-3 text-center">
-        {/* <Link to="/contact" className="btn btn-outline-light mx-1 btn-lg">
-          <GrMail style={{ marginBottom: "2px" }} size={25} /> Contact
-        </Link> */}
-        <a
-          href="https://github.com/MattPereira"
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-outline-light mx-1 btn-lg"
-        >
-          <FaGithub style={{ marginBottom: "3px" }} size={25} /> GitHub
-        </a>
+  const StyledButton = styled(Button)({
+    color: "white",
+    borderColor: "white",
+    px: 3,
+    py: 1,
+    borderRadius: "10px",
+    fontSize: "1.3rem",
+    fontFamily: "Raleway",
+    textTransform: "none",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "#1e1e1e",
+      borderColor: "white",
+    },
+  });
 
-        <a
-          href="https://www.linkedin.com/in/-matt-pereira-/"
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-outline-light mx-1 btn-lg"
-        >
-          Linked <BsLinkedin style={{ marginBottom: "4px" }} size={25} />
-        </a>
-      </div>
-    </Row>
+  return (
+    <Box sx={{ py: 3 }}>
+      <Grid container spacing={1}>
+        <Grid item>
+          <StyledButton
+            variant="outlined"
+            href="https://github.com/MattPereira"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon fontSize="large" /> &nbsp; GitHub
+          </StyledButton>
+        </Grid>
+        <Grid item>
+          <StyledButton
+            variant="outlined"
+            href="https://www.linkedin.com/in/-matt-pereira-/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Linked&nbsp;
+            <LinkedInIcon fontSize="large" />
+          </StyledButton>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

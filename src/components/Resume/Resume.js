@@ -1,13 +1,11 @@
-import "./Resume.scss";
-
 import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import AnimatedLetters from "../AnimatedLetters";
 
-import Button from "react-bootstrap/Button";
+import { Container, Button, Box } from "@mui/material";
 
 import resume_pdf from "../../assets/pdf/Matt_Pereira_Resume.pdf";
-import { BsCloudDownload } from "react-icons/bs";
+import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -32,41 +30,39 @@ function ResumeNew() {
   }, []);
 
   return (
-    <div>
-      <Container fluid className="py-5 mb-5">
-        <h1 className="section-title">
+    <Container fluid sx={{ py: 5 }}>
+      <h1 className="section-title">
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={myRecent}
+          idx={10}
+        />
+        <span className="pink">
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={myRecent}
-            idx={10}
+            strArray={projects}
+            idx={13}
           />
-          <span className="pink">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={projects}
-              idx={13}
-            />
-          </span>
-        </h1>
+        </span>
+      </h1>
 
-        <Row className="justify-content-center my-5">
-          <Button
-            variant="outline-light"
-            href={resume_pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <BsCloudDownload size={25} />
-            &nbsp; Download PDF
-          </Button>
-        </Row>
-        <Row className="resume">
-          <Document file={resumeLink} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-          </Document>
-        </Row>
-      </Container>
-    </div>
+      <Box sx={{ textAlign: "center", mb: 5 }}>
+        <Button
+          variant="outlined"
+          href={resume_pdf}
+          target="_blank"
+          sx={{ color: "white", borderColor: "white", px: 5 }}
+        >
+          <CloudDownloadIcon />
+          &nbsp; Download PDF
+        </Button>
+      </Box>
+      <Box>
+        <Document file={resumeLink} className="d-flex justify-content-center">
+          <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+        </Document>
+      </Box>
+    </Container>
   );
 }
 

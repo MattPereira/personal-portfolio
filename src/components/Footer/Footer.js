@@ -1,43 +1,46 @@
 import React from "react";
-import "./Footer.css";
-import { Container, Row, Col } from "react-bootstrap";
-import { VscGithub } from "react-icons/vsc";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { Box, Container, Grid } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 function Footer() {
   return (
-    <Container fluid className="footer">
-      <Row className="justify-content-center">
-        <Col className="col-auto">
-          <a
-            href="https://github.com/MattPereira"
-            style={{ color: "white" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <VscGithub size={25} />
-          </a>
-          <a
-            href="mailto: matthewdavidpereira@gmail.com"
-            style={{ color: "white" }}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5"
-          >
-            <FiMail size={25} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/matt-pereira-32428a63/"
-            style={{ color: "white" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedinIn size={25} />
-          </a>
-        </Col>
-      </Row>
-    </Container>
+    <footer>
+      <Box
+        bgcolor="text.secondary"
+        sx={{ bottom: 0, position: "absolute", width: "100%", py: 1 }}
+      >
+        <Container fluid>
+          <Grid container spacing={4} sx={{ justifyContent: "center" }}>
+            <Grid item>
+              <a
+                href="https://github.com/MattPereira"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon fontSize="large" sx={{ color: "white" }} />
+              </a>
+            </Grid>
+            <Grid item>
+              <a
+                href="https://www.linkedin.com/in/matt-pereira-32428a63/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInIcon fontSize="large" sx={{ color: "white" }} />
+              </a>
+            </Grid>
+            <Grid item>
+              <Link to="/contact">
+                <MailOutlineIcon fontSize="large" sx={{ color: "white" }} />
+              </Link>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+    </footer>
   );
 }
 

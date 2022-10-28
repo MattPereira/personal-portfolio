@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-// import { BsGithub, BsFillPlayFill } from "react-icons/bs";
-
 import { Card, Col } from "react-bootstrap";
 
 const ProjectCard = ({ detailsLink, githubLink, demoLink, logo, title }) => {

@@ -6,7 +6,9 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 import { Row, Col, Button, Spinner } from "react-bootstrap";
-import { BsGithub, BsPlayCircleFill } from "react-icons/bs";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 
 const ProjectDetails = () => {
   const { name } = useParams();
@@ -47,12 +49,15 @@ const ProjectDetails = () => {
       <Row className="justify-content-center mb-5">
         <Col className="col-auto">
           <Button variant="outline-light" size={"lg"} href={project.githubLink}>
-            <BsGithub size={23} style={{ marginBottom: "3px" }} /> Code
+            <GitHubIcon size={23} style={{ marginBottom: "3px" }} /> Code
           </Button>
         </Col>
         <Col className="col-auto">
           <Button variant="outline-light" size={"lg"} href={project.demoLink}>
-            <BsPlayCircleFill size={23} style={{ marginBottom: "3px" }} />{" "}
+            <PlayCircleFilledWhiteIcon
+              size={23}
+              style={{ marginBottom: "3px" }}
+            />{" "}
             {"  "}
             Demo
           </Button>
