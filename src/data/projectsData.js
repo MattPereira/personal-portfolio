@@ -16,7 +16,7 @@ export const projectsData = [
   {
     title: "No Fun League",
     repoName: "no-fun-league",
-    demoLink: "https://no-fun-league.herokuapp.com/",
+    demoLink: "https://no-fun-league.up.railway.app/",
     githubLink: "https://github.com/MattPereira/no-fun-league",
     screenshots: [nfl1, nfl2],
   },

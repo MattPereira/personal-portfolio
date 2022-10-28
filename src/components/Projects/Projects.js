@@ -56,7 +56,7 @@ const Projects = () => {
             title="No Fun League"
             logo={nfl_logo}
             githubLink="https://github.com/MattPereira/no_fun_league"
-            demoLink="https://no-fun-league.herokuapp.com/"
+            demoLink="https://no-fun-league.up.railway.app/"
           />
           <ProjectCard
             title="Tabernacle School"

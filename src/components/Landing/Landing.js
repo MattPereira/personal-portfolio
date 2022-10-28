@@ -20,7 +20,7 @@ const Landing = () => {
 
   return (
     <section className="Landing">
-      <img src={logo} className="img-fluid mp-logo" alt="mp-logo" />
+      <img src={logo} className="img-fluid mp-logo rotate" alt="mp-logo" />
       <h1 className="text-white mt-5 Landing-name">
         <AnimatedLetters
           letterClass={letterClass}
