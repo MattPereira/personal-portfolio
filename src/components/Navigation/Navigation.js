@@ -4,7 +4,7 @@ import "./Navigation.scss";
 import logoLight from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
 import logoDark from "../../assets/svg/logos/MP_LOGO_DARK.svg";
 
-import { NavLink as RRNavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
@@ -27,61 +27,53 @@ const Navigation = () => {
   window.addEventListener("scroll", scrollHandler);
   window.addEventListener("resize", scrollHandler);
   return (
-    <div>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        className={navColour ? "sticky" : "navbar"}
-        variant="light"
-        fixed="top"
-      >
-        <Container>
-          <Navbar.Brand
-            eventKey={1}
-            as={RRNavLink}
-            to="/"
-            className="navbar-brand"
-          >
-            {navColour ? (
-              <img src={logoDark} className="img-fluid logo" alt="brand" />
-            ) : (
-              <img src={logoLight} className="img-fluid logo" alt="brand" />
-            )}
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto" defaultActiveKey="#home">
-              <Nav.Item>
-                <Nav.Link eventKey={2} as={RRNavLink} to="/">
-                  <CottageOutlinedIcon sx={{ marginBottom: "2px" }} /> Home
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey={3} as={RRNavLink} to="/about">
-                  <PersonOutlineOutlinedIcon sx={{ marginBottom: "2px" }} />{" "}
-                  About
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey={4} as={RRNavLink} to="/projects">
-                  <WorkOutlineIcon sx={{ marginBottom: "2px" }} /> Projects
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey={5} as={RRNavLink} to="/resume">
-                  <ArticleOutlinedIcon sx={{ marginBottom: "2px" }} /> Resume
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey={6} as={RRNavLink} to="/contact">
-                  <MailOutlinedIcon sx={{ marginBottom: "2px" }} /> Contact
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className={navColour ? "sticky" : "navbar"}
+      variant="light"
+      fixed="top"
+    >
+      <Container>
+        <Navbar.Brand eventkey={1} as={NavLink} to="/" className="navbar-brand">
+          {navColour ? (
+            <img src={logoDark} className="img-fluid logo" alt="brand" />
+          ) : (
+            <img src={logoLight} className="img-fluid logo" alt="brand" />
+          )}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto" defaultActiveKey="#home">
+            <Nav.Item>
+              <Nav.Link eventkey={2} as={NavLink} to="/">
+                <CottageOutlinedIcon sx={{ marginBottom: "2px" }} /> Home
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventkey={3} as={NavLink} to="/about">
+                <PersonOutlineOutlinedIcon sx={{ marginBottom: "2px" }} /> About
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventkey={4} as={NavLink} to="/projects">
+                <WorkOutlineIcon sx={{ marginBottom: "2px" }} /> Projects
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventkey={5} as={NavLink} to="/resume">
+                <ArticleOutlinedIcon sx={{ marginBottom: "2px" }} /> Resume
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventkey={6} as={NavLink} to="/contact">
+                <MailOutlinedIcon sx={{ marginBottom: "2px" }} /> Contact
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

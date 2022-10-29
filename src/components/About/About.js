@@ -40,14 +40,13 @@ const About = () => {
         </Col>
         <Col lg={6} className="text-white">
           <p className="lead">
-            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl, eget
-            aliquet nisl nisl sit amet lorem. Sed condimentum, nisl ut aliquam
+            I am a full stack web developer looking for opportunities to
+            contribute to meaningful projects that have a positive impact on
+            society.
           </p>
           <p className="lead">
-            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl, eget
-            aliquet nisl nisl sit amet lorem. Sed condimentum, nisl ut aliquam
+            I am also an open source enthusiast and an aficionado of Linux
+            distributions based on Debian like Ubuntu.
           </p>
         </Col>
       </Row>

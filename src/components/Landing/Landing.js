@@ -1,9 +1,13 @@
-import "./Landing.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+import particlesOptions from "./particles.json";
 
 import Type from "./Type";
 import AnimatedLetters from "../AnimatedLetters";
 import Socials from "../Socials/Socials";
+
+import { Box, Typography } from "@mui/material";
 
 import logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
 
@@ -18,21 +22,41 @@ const Landing = () => {
     }, 4000);
   }, []);
 
+  const particlesInit = useCallback((main) => {
+    loadFull(main);
+  }, []);
+
   return (
-    <section className="Landing">
-      <img src={logo} className="img-fluid mp-logo rotate" alt="mp-logo" />
-      <h1 className="text-white mt-5 Landing-name">
-        <AnimatedLetters
-          letterClass={letterClass}
-          strArray={nameArray}
-          idx={11}
+    <>
+      <Box
+        sx={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Particles options={particlesOptions} init={particlesInit} />
+        <Box
+          component="img"
+          src={logo}
+          alt="mp-logo"
+          sx={{ width: { xs: "70%", sm: "50%", lg: "40%" }, mb: 5 }}
         />
-      </h1>
-      <div>
-        <Type />
-      </div>
-      <Socials />
-    </section>
+        <Typography variant="h1" sx={{ mb: 1 }}>
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={nameArray}
+            idx={11}
+          />
+        </Typography>
+        <Box>
+          <Type />
+        </Box>
+        <Socials />
+      </Box>
+    </>
   );
 };
 

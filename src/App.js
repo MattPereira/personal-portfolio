@@ -12,25 +12,44 @@ import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/Projects/ProjectDetails";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
+
+import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material";
+
+let theme = createTheme({
+  typography: {
+    h1: {
+      fontFamily: "Montserrat",
+      fontWeight: 800,
+      fontSize: "5rem",
+      color: "white",
+      letterSpacing: "0.3rem",
+    },
+  },
+});
+
+theme = responsiveFontSizes(theme);
+
 function App() {
   return (
-    <div className="App page-container">
-      <Navigation />
-      <Container className="mt-5 content-wrap">
-        <ScrollToTop>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:name" element={<ProjectDetails />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </ScrollToTop>
-      </Container>
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App page-container">
+        <Navigation />
+        <Container className="content-wrap">
+          <ScrollToTop>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:name" element={<ProjectDetails />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </ScrollToTop>
+        </Container>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

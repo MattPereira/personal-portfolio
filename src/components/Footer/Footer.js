@@ -12,7 +12,7 @@ function Footer() {
         bgcolor="text.secondary"
         sx={{ bottom: 0, position: "absolute", width: "100%", py: 1 }}
       >
-        <Container fluid>
+        <Container>
           <Grid container spacing={4} sx={{ justifyContent: "center" }}>
             <Grid item>
               <a

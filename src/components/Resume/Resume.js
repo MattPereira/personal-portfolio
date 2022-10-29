@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Row } from "react-bootstrap";
 import AnimatedLetters from "../AnimatedLetters";
 
 import { Container, Button, Box } from "@mui/material";
@@ -30,7 +29,7 @@ function ResumeNew() {
   }, []);
 
   return (
-    <Container fluid sx={{ py: 5 }}>
+    <Container sx={{ py: 5 }}>
       <h1 className="section-title">
         <AnimatedLetters
           letterClass={letterClass}
