@@ -14,7 +14,7 @@ import logo from "../../assets/images/mp/mp_cut_out_white.svg";
 const Landing = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = " Matt Pereira".split("");
+  const nameArray = " Matt  Pereira".split("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -44,7 +44,15 @@ const Landing = () => {
           alt="mp-logo"
           sx={{ width: { xs: "70%", sm: "50%", lg: "40%" }, mb: 5 }}
         />
-        <Typography variant="h1" sx={{ mb: 1 }}>
+        <Typography
+          variant="h1"
+          sx={{
+            mb: 1,
+            fontFamily: "Permanent Marker",
+            color: "white",
+            letterSpacing: "0.5rem",
+          }}
+        >
           <AnimatedLetters
             letterClass={letterClass}
             strArray={nameArray}

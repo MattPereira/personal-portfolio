@@ -17,7 +17,7 @@ import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material";
 
 let theme = createTheme({
   typography: {
-    h1: {
+    h5: {
       fontFamily: "Montserrat",
       fontWeight: 800,
       fontSize: "5rem",

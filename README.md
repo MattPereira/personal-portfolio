@@ -1,7 +1,7 @@
 # Personal Portfolio
 <p align="center">
 <a href="https://matt-pereira.surge.sh/">
-<img src="https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/svg/logos/MP_LOGO_DARK.svg" width="200" height="200"/>
+<img src="https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/mp/mp_circle_black.png" width="200" height="200"/>
 </a>
 </p>
 
