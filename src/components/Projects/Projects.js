@@ -7,7 +7,7 @@ import ProjectCard from "./ProjectCard";
 
 import nfl_logo from "../../assets/images/no_fun_league.png";
 import ccgc_logo from "../../assets/images/ccgc_logo.png";
-import ts_logo from "../../assets/images/TS_LOGO_CIRCLE.png";
+import ts_logo from "../../assets/images/ts_logo.png";
 
 const Projects = () => {
   const [letterClass, setLetterClass] = useState("text-animate");

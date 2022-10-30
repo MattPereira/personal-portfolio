@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Navigation.scss";
 
-import logoLight from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
-import logoDark from "../../assets/svg/logos/MP_LOGO_DARK.svg";
+import logoWhite from "../../assets/images/mp/mp_logo_white.svg";
+import logoBlack from "../../assets/images/mp/mp_logo_black.svg";
 
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
@@ -37,9 +37,9 @@ const Navigation = () => {
       <Container>
         <Navbar.Brand eventkey={1} as={NavLink} to="/" className="navbar-brand">
           {navColour ? (
-            <img src={logoDark} className="img-fluid logo" alt="brand" />
+            <img src={logoBlack} className="img-fluid logo" alt="brand" />
           ) : (
-            <img src={logoLight} className="img-fluid logo" alt="brand" />
+            <img src={logoWhite} className="img-fluid logo" alt="brand" />
           )}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -9,7 +9,7 @@ import Socials from "../Socials/Socials";
 
 import { Box, Typography } from "@mui/material";
 
-import logo from "../../assets/svg/logos/MP_LOGO_LIGHT.svg";
+import logo from "../../assets/images/mp/mp_cut_out_white.svg";
 
 const Landing = () => {
   const [letterClass, setLetterClass] = useState("text-animate");

@@ -3,14 +3,14 @@ import AnimatedLetters from "../AnimatedLetters";
 
 import { Container, Button, Box } from "@mui/material";
 
-import resume_pdf from "../../assets/pdf/Matt_Pereira_Resume.pdf";
+import resume_pdf from "../../assets/Matt_Pereira_Resume.pdf";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLink =
-  "https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/pdf/Matt_Pereira_Resume.pdf";
+  "https://raw.githubusercontent.com/MattPereira/personal-portfolio/main/src/assets/Matt_Pereira_Resume.pdf";
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
