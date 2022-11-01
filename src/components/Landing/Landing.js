@@ -42,15 +42,16 @@ const Landing = () => {
           component="img"
           src={logo}
           alt="mp-logo"
-          sx={{ width: { xs: "70%", sm: "50%", lg: "40%" }, mb: 5 }}
+          sx={{ width: { xs: "70%", md: "60%", lg: "40%" }, mb: 5, zIndex: 1 }}
         />
         <Typography
           variant="h1"
           sx={{
             mb: 1,
-            fontFamily: "Permanent Marker",
+            fontFamily: "Fredoka One",
             color: "white",
-            letterSpacing: "0.5rem",
+            letterSpacing: "0.4rem",
+            fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
           }}
         >
           <AnimatedLetters

@@ -1,3 +1,4 @@
+import { createContext, useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import "./App.scss";
@@ -15,21 +16,15 @@ import Contact from "./pages/Contact";
 
 import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material";
 
-let theme = createTheme({
-  typography: {
-    h5: {
-      fontFamily: "Montserrat",
-      fontWeight: 800,
-      fontSize: "5rem",
-      color: "white",
-      letterSpacing: "0.3rem",
-    },
-  },
-});
+const ColorModeContext = createContext({ toggleColorMode: () => {} });
+
+let theme = createTheme({});
 
 theme = responsiveFontSizes(theme);
 
 function App() {
+  const colorMode = useContext(ColorModeContext);
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App page-container">

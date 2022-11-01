@@ -39,7 +39,7 @@
     "eject": "react-scripts eject",
     "build": "react-scripts build",
     "pre-deploy": "cp build/index.html build/200.html",
-    "deploy": "surge build --domain matt-pereira.surge.sh"
+    "deploy": "surge build --domain https://matt-pereira.surge.sh"
   },
   "eslintConfig": {
     "extends": [
