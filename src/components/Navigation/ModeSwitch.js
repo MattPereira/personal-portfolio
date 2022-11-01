@@ -1,5 +1,8 @@
-import { styled } from "@mui/material/styles";
+import { useContext } from "react";
+import { styled, useTheme } from "@mui/material/styles";
 import { FormGroup, FormControlLabel, Switch } from "@mui/material";
+
+import ColorModeContext from "../../ColorModeContext";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -48,12 +51,20 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function ModeSwitch({ toggle }) {
+export default function ModeSwitch() {
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
+
   return (
     <FormGroup>
       <FormControlLabel
-        onClick={toggle}
-        control={<MaterialUISwitch defaultChecked />}
+        sx={{ m: 0 }}
+        onClick={colorMode.toggleColorMode}
+        control={
+          <MaterialUISwitch
+            checked={theme.palette.mode === "dark" ? true : false}
+          />
+        }
       />
     </FormGroup>
   );

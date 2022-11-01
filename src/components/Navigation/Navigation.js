@@ -31,7 +31,6 @@ import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { Modes } from "tsparticles-engine";
 
 const navItems = [
   {
@@ -61,8 +60,8 @@ const navItems = [
   },
 ];
 
-const Navigation = (props, { toggleMode }) => {
-  const [navColour, updateNavbar] = useState(false);
+const Navigation = (props) => {
+  const [scrolled, updateNavbar] = useState(false);
 
   function scrollHandler() {
     if (window.scrollY >= 20 || window.innerWidth <= 992) {
@@ -72,10 +71,10 @@ const Navigation = (props, { toggleMode }) => {
     }
   }
 
-  // window.addEventListener("scroll", scrollHandler);
-  // window.addEventListener("resize", scrollHandler);
+  window.addEventListener("scroll", scrollHandler);
+  window.addEventListener("resize", scrollHandler);
 
-  const { window } = props;
+  const { window: windoo } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -94,6 +93,9 @@ const Navigation = (props, { toggleMode }) => {
           <Box component="img" src={logoBlack} sx={{ width: "35px" }} />
         </Grid>
         <Grid item>
+          <ModeSwitch />
+        </Grid>
+        <Grid item>
           <CloseIcon fontSize="large" />
         </Grid>
       </Grid>
@@ -104,48 +106,43 @@ const Navigation = (props, { toggleMode }) => {
           return (
             <ListItem key={text} disablePadding>
               <ListItemButton component={NavLink} to={path}>
-                <ListItemIcon>{icon}</ListItemIcon>
+                <ListItemIcon
+                  sx={{ justifyContent: "center", color: "#323232" }}
+                >
+                  {icon}
+                </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
           );
         })}
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ModeSwitch />
-          </ListItemButton>
-        </ListItem>
       </List>
     </Box>
   );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined;
+    windoo !== undefined ? () => window().document.body : undefined;
 
   return (
     <>
-      <AppBar component="nav" color={false ? "transparent" : "transparent"}>
-        <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
-            <NavLink to="/">
+      <AppBar
+        component="nav"
+        color={scrolled ? "secondary" : "transparent"}
+        elevation={scrolled ? 8 : 0}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <NavLink to="/">
+            <Box sx={{ width: "62px" }}>
               <Box
                 component="img"
-                src={navColour ? logoBlack : logoWhite}
+                src={scrolled ? logoBlack : logoWhite}
                 sx={{ width: "35px" }}
               />
-            </NavLink>
-          </Box>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ display: { md: "none" } }}
-          >
-            <MenuIcon fontSize="large" />
-          </IconButton>
+            </Box>
+          </NavLink>
+
           <Box
-            sx={{ flexGrow: 1, display: { xs: "none", md: "block" } }}
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
             justifyContent="center"
           >
             {navItems.map((item) => {
@@ -156,7 +153,7 @@ const Navigation = (props, { toggleMode }) => {
                   component={NavLink}
                   to={path}
                   sx={{
-                    color: "#fff",
+                    color: scrolled ? "black" : "#fff",
                     textTransform: "none",
                     fontFamily: "Raleway",
                     fontWeight: 500,
@@ -170,6 +167,16 @@ const Navigation = (props, { toggleMode }) => {
             })}
           </Box>
           <ModeSwitch />
+
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: "none" } }}
+          >
+            <MenuIcon fontSize="large" />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Box component="nav">

@@ -22,9 +22,9 @@ const Landing = () => {
     }, 4000);
   }, []);
 
-  const particlesInit = useCallback((main) => {
-    loadFull(main);
-  }, []);
+  // const particlesInit = useCallback((main) => {
+  //   loadFull(main);
+  // }, []);
 
   return (
     <>
@@ -37,7 +37,7 @@ const Landing = () => {
           alignItems: "center",
         }}
       >
-        <Particles options={particlesOptions} init={particlesInit} />
+        {/* <Particles options={particlesOptions} init={particlesInit} /> */}
         <Box
           component="img"
           src={logo}
