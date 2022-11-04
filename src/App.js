@@ -56,6 +56,7 @@ function App() {
         palette: {
           text: {
             primary: mode === "light" ? "rgb(50,50,50)" : "#fff",
+            secondary: mode === "light" ? "#fff" : "rgb(50,50,50)",
           },
           mode,
           ...(mode === "light"

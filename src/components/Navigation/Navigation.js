@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
-import "./Navigation.scss";
 
 import ModeSwitch from "./ModeSwitch";
 import { NavLink } from "react-router-dom";
@@ -16,7 +15,7 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
+  Typography,
   Toolbar,
   Button,
   ListItemIcon,
@@ -35,27 +34,27 @@ import CloseIcon from "@mui/icons-material/Close";
 const navItems = [
   {
     text: "Home",
-    icon: <CottageOutlinedIcon sx={{ mb: "2px", mr: "5px" }} />,
+    icon: <CottageOutlinedIcon />,
     path: "/",
   },
   {
     text: "About",
-    icon: <PersonOutlineOutlinedIcon sx={{ mb: "2px", mr: "5px" }} />,
+    icon: <PersonOutlineOutlinedIcon />,
     path: "/about",
   },
   {
     text: "Projects",
-    icon: <WorkOutlineIcon sx={{ mb: "2px", mr: "5px" }} />,
+    icon: <WorkOutlineIcon />,
     path: "/projects",
   },
   {
     text: "Resume",
-    icon: <ArticleOutlinedIcon sx={{ mb: "2px", mr: "5px" }} />,
+    icon: <ArticleOutlinedIcon />,
     path: "/resume",
   },
   {
     text: "Contact",
-    icon: <MailOutlinedIcon sx={{ mb: "2px", mr: "5px" }} />,
+    icon: <MailOutlinedIcon />,
     path: "/contact",
   },
 ];
@@ -99,10 +98,7 @@ const Navigation = (props) => {
           </SvgIcon>
         </Grid>
         <Grid item>
-          <ModeSwitch />
-        </Grid>
-        <Grid item>
-          <CloseIcon fontSize="large" />
+          <CloseIcon fontSize="large" sx={{ color: "text.secondary" }} />
         </Grid>
       </Grid>
       <Divider />
@@ -111,13 +107,19 @@ const Navigation = (props) => {
           const { text, icon, path } = item;
           return (
             <ListItem key={text} disablePadding>
-              <ListItemButton component={NavLink} to={path}>
+              <ListItemButton
+                component={NavLink}
+                to={path}
+                sx={{ justifyContent: "center", fontSize: "1.3rem" }}
+              >
                 <ListItemIcon
-                  sx={{ justifyContent: "center", color: "#323232" }}
+                  sx={{ justifyContent: "center", color: "text.secondary" }}
                 >
                   {icon}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <Typography sx={{ color: "text.secondary" }} fontSize="inherit">
+                  {text}
+                </Typography>
               </ListItemButton>
             </ListItem>
           );
@@ -172,20 +174,18 @@ const Navigation = (props) => {
               return (
                 <Button
                   key={text}
-                  // component={NavLink}
-                  // to={path}
+                  component={NavLink}
+                  to={path}
                   sx={{
-                    color: scrolled
-                      ? "palette.background.paper"
-                      : "text.primary",
+                    color: scrolled ? "text.secondary" : "text.primary",
                     textTransform: "none",
-                    fontFamily: "Raleway",
+                    fontFamily: "Montserrat",
                     fontWeight: 500,
                     fontSize: "1.1rem",
                     p: 2,
                   }}
                 >
-                  {icon} {text}
+                  {icon} <span style={{ marginLeft: "4px" }}>{text}</span>
                 </Button>
               );
             })}
@@ -193,13 +193,12 @@ const Navigation = (props) => {
           <ModeSwitch />
 
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ display: { md: "none" } }}
           >
-            <MenuIcon fontSize="large" />
+            <MenuIcon fontSize="large" sx={{ color: "text.secondary" }} />
           </IconButton>
         </Toolbar>
       </AppBar>
