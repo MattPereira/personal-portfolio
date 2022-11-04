@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { useTheme } from "@mui/material/styles";
 import "./Navigation.scss";
 
 import ModeSwitch from "./ModeSwitch";
-
-import logoWhite from "../../assets/images/mp/mp_logo_white.svg";
-import logoBlack from "../../assets/images/mp/mp_logo_black.svg";
-
 import { NavLink } from "react-router-dom";
-// import { Navbar, Nav, Container } from "react-bootstrap";
+
+import { ReactComponent as MPLogo } from "../../assets/images/mp/mp_logo_black.svg";
+
 import {
   AppBar,
   Box,
@@ -22,6 +21,7 @@ import {
   Button,
   ListItemIcon,
   Grid,
+  SvgIcon,
 } from "@mui/material";
 
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
@@ -61,6 +61,7 @@ const navItems = [
 ];
 
 const Navigation = (props) => {
+  const theme = useTheme();
   const [scrolled, updateNavbar] = useState(false);
 
   function scrollHandler() {
@@ -90,7 +91,12 @@ const Navigation = (props) => {
         sx={{ py: 1.5, px: 3 }}
       >
         <Grid item>
-          <Box component="img" src={logoBlack} sx={{ width: "35px" }} />
+          <SvgIcon
+            fontSize="large"
+            sx={{ color: theme.palette.background.default }}
+          >
+            <MPLogo />
+          </SvgIcon>
         </Grid>
         <Grid item>
           <ModeSwitch />
@@ -127,17 +133,33 @@ const Navigation = (props) => {
     <>
       <AppBar
         component="nav"
-        color={scrolled ? "secondary" : "transparent"}
+        sx={{
+          backgroundColor: scrolled
+            ? theme.palette.background.paper
+            : "transparent",
+        }}
         elevation={scrolled ? 8 : 0}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <NavLink to="/">
             <Box sx={{ width: "62px" }}>
-              <Box
-                component="img"
-                src={scrolled ? logoBlack : logoWhite}
-                sx={{ width: "35px" }}
-              />
+              <SvgIcon
+                sx={{
+                  color:
+                    theme.palette.mode === "light"
+                      ? scrolled
+                        ? "white"
+                        : theme.palette.background.paper
+                      : theme.palette.mode === "dark"
+                      ? scrolled
+                        ? theme.palette.background.default
+                        : theme.palette.background.paper
+                      : "white",
+                }}
+                fontSize="large"
+              >
+                <MPLogo />
+              </SvgIcon>
             </Box>
           </NavLink>
 
@@ -150,10 +172,12 @@ const Navigation = (props) => {
               return (
                 <Button
                   key={text}
-                  component={NavLink}
-                  to={path}
+                  // component={NavLink}
+                  // to={path}
                   sx={{
-                    color: scrolled ? "black" : "#fff",
+                    color: scrolled
+                      ? "palette.background.paper"
+                      : "text.primary",
                     textTransform: "none",
                     fontFamily: "Raleway",
                     fontWeight: 500,

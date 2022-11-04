@@ -19,7 +19,8 @@ import ColorModeContext from "./ColorModeContext";
 
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import particlesOptions from "./particles.json";
+import particlesDark from "./particlesDark.json";
+import particlesLight from "./particlesLight.json";
 
 function App() {
   const particlesInit = useCallback((main) => {
@@ -39,8 +40,37 @@ function App() {
   let theme = useMemo(
     () =>
       createTheme({
+        typography: {
+          h2: {
+            fontFamily: "Raleway",
+            fontSize: "3rem",
+            fontWeight: 800,
+            marginBottom: "40px",
+          },
+          p: {
+            fontSize: "1.5rem",
+            fontFamily: "Montserrat",
+            fontWeight: 400,
+          },
+        },
         palette: {
+          text: {
+            primary: mode === "light" ? "rgb(50,50,50)" : "#fff",
+          },
           mode,
+          ...(mode === "light"
+            ? {
+                background: {
+                  default: "#fff",
+                  paper: "#323232",
+                },
+              }
+            : {
+                background: {
+                  default: "#323232",
+                  paper: "#fff",
+                },
+              }),
         },
       }),
     [mode]
@@ -48,19 +78,29 @@ function App() {
 
   theme = responsiveFontSizes(theme);
 
+  console.log(theme);
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <Box
-          className="App page-container"
-          // sx={{
-          //   backgroundColor: theme.palette.mode === "dark" ? "black" : "white",
-          // }}
+          sx={{
+            position: "relative",
+            minHeight: "100vh",
+            backgroundColor:
+              theme.palette.mode === "dark"
+                ? theme.palette.background.default
+                : "transparent",
+          }}
         >
           <Navigation />
-          <Particles options={particlesOptions} init={particlesInit} />
+          <Particles
+            options={
+              theme.palette.mode === "dark" ? particlesDark : particlesLight
+            }
+            init={particlesInit}
+          />
 
-          <Container className="content-wrap">
+          <Box sx={{ pt: "76.609px", pb: "51px" }}>
             <ScrollToTop>
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -72,7 +112,7 @@ function App() {
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </ScrollToTop>
-          </Container>
+          </Box>
           <Footer />
         </Box>
       </ThemeProvider>

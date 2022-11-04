@@ -1,5 +1,3 @@
-// $primary-color: #ffd700;
-
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
 
@@ -9,12 +7,6 @@
   min-height: 100vh;
 }
 
-//navbar is currently changing heights at different screen widths
-.content-wrap {
-  padding-top: 76.609px; /* Navbar height */
-  padding-bottom: 51px; /* Footer height */
-
-}
 
 .section-title {
   color: white;

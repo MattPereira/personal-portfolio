@@ -1,17 +1,15 @@
-import { useState, useEffect, useCallback } from "react";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import particlesOptions from "./particles.json";
+import { useState, useEffect } from "react";
+import { useTheme } from "@mui/material/styles";
 
 import Type from "./Type";
 import AnimatedLetters from "../AnimatedLetters";
 import Socials from "../Socials/Socials";
 
-import { Box, Typography } from "@mui/material";
-
-import logo from "../../assets/images/mp/mp_cut_out_white.svg";
+import { Box, Typography, SvgIcon } from "@mui/material";
+import { ReactComponent as MPLogo } from "../../assets/images/mp/mp_cut_out_black.svg";
 
 const Landing = () => {
+  const theme = useTheme();
   const [letterClass, setLetterClass] = useState("text-animate");
 
   const nameArray = " Matt  Pereira".split("");
@@ -37,19 +35,26 @@ const Landing = () => {
           alignItems: "center",
         }}
       >
-        {/* <Particles options={particlesOptions} init={particlesInit} /> */}
         <Box
-          component="img"
-          src={logo}
-          alt="mp-logo"
-          sx={{ width: { xs: "70%", md: "60%", lg: "40%" }, mb: 5, zIndex: 1 }}
-        />
+          sx={{
+            fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
+            display: "flex",
+          }}
+        >
+          <SvgIcon
+            fontSize="inherit"
+            sx={{ color: theme.palette.background.paper }}
+          >
+            <MPLogo />
+          </SvgIcon>
+        </Box>
+
         <Typography
           variant="h1"
           sx={{
             mb: 1,
             fontFamily: "Fredoka One",
-            color: "white",
+            color: theme.palette.background.paper,
             letterSpacing: "0.4rem",
             fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
           }}
