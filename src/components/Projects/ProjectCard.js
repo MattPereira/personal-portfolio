@@ -1,24 +1,79 @@
 import { Link } from "react-router-dom";
+import { Grid, Typography, Paper, Box } from "@mui/material";
 
-import { Card, Col } from "react-bootstrap";
+const ProjectCard = ({
+  project: { title, logo, links, description, languages, technologies },
+}) => {
+  console.log(title);
 
-const ProjectCard = ({ detailsLink, githubLink, demoLink, logo, title }) => {
+  const slug = title.toLowerCase().split(" ").join("-");
   return (
-    <>
-      <Col className="col-11 col-md-8 col-lg-7 col-xl-4 mb-5">
-        <Link
-          to={`/projects/${title.toLowerCase().split(" ").join("-")}`}
-          className="text-decoration-none"
+    <Paper sx={{ mb: 4, borderRadius: "20px" }}>
+      <Grid container>
+        <Grid
+          item
+          xs={12}
+          md={5}
+          sx={{
+            backgroundColor: "black",
+            borderRadius: { xs: "20px 20px 0 0", md: "20px 0 0 20px" },
+          }}
         >
-          <h5 className="text-center text-white fs-3 fw-bold">{title}</h5>
-          <Card className="ProjectCard text-white ">
-            <Card.Body className="text-center">
-              <img className="img-fluid mb-3 mb-md-0" src={logo} alt={logo} />
-            </Card.Body>
-          </Card>
-        </Link>
-      </Col>
-    </>
+          <Link to={`/projects/${slug}`} className="text-decoration-none">
+            <Box
+              component="img"
+              src={logo}
+              alt={logo}
+              sx={{ height: "100%", width: "100%" }}
+            />
+          </Link>
+        </Grid>
+        <Grid item xs={12} md={7} sx={{ p: 2 }}>
+          <Box sx={{ mb: 3 }}>
+            <Typography
+              component={Link}
+              to={`/projects/${slug}`}
+              variant="h3"
+              color="text.highlight"
+            >
+              {title}
+            </Typography>
+          </Box>
+
+          <Box sx={{ mb: 3 }}>
+            <Typography variant="p" color="text.secondary">
+              {description}
+            </Typography>
+          </Box>
+
+          <div>
+            <Typography variant="p" color="text.secondary">
+              <strong>Links: </strong>
+              <Link to={`/projects/${slug}`}>Details</Link>,{" "}
+              <a href={links.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              ,{" "}
+              <a href={links.github} target="_blank" rel="noreferrer">
+                Site
+              </a>
+            </Typography>
+          </div>
+          <div>
+            <Typography variant="p" color="text.secondary">
+              <strong>Languages: </strong>
+              {languages}
+            </Typography>
+          </div>
+          <div>
+            <Typography variant="p" color="text.secondary">
+              <strong>Technologies: </strong>
+              {technologies}
+            </Typography>
+          </div>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 };
 

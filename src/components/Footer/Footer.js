@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer>
       <Box
-        bgcolor="text.secondary"
+        bgcolor="text.primary"
         sx={{ bottom: 0, position: "absolute", width: "100%", py: 1 }}
       >
         <Container>
@@ -20,7 +20,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitHubIcon fontSize="large" sx={{ color: "white" }} />
+                <GitHubIcon fontSize="large" sx={{ color: "text.secondary" }} />
               </a>
             </Grid>
             <Grid item>
@@ -29,12 +29,18 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkedInIcon fontSize="large" sx={{ color: "white" }} />
+                <LinkedInIcon
+                  fontSize="large"
+                  sx={{ color: "text.secondary" }}
+                />
               </a>
             </Grid>
             <Grid item>
               <Link to="/contact">
-                <MailOutlineIcon fontSize="large" sx={{ color: "white" }} />
+                <MailOutlineIcon
+                  fontSize="large"
+                  sx={{ color: "text.secondary" }}
+                />
               </Link>
             </Grid>
           </Grid>

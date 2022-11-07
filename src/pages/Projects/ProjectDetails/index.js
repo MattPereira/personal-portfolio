@@ -21,18 +21,20 @@ const ProjectDetails = () => {
     (proj) => proj.title.toLowerCase().split(" ").join("-") === name
   )[0];
 
+  console.log(name);
+
   useEffect(
     function getAllStaff() {
       async function getProject() {
         setReadMe(
           await axios.get(
-            `https://raw.githubusercontent.com/MattPereira/${project.repoName}/main/README.md`
+            `https://raw.githubusercontent.com/MattPereira/${name}/main/README.md`
           )
         );
       }
       getProject();
     },
-    [project.repoName]
+    [name]
   );
 
   if (!readMe)
@@ -48,12 +50,16 @@ const ProjectDetails = () => {
       <h1 className="text-center text-white display-3 mb-5">{project.title}</h1>
       <Row className="justify-content-center mb-5">
         <Col className="col-auto">
-          <Button variant="outline-light" size={"lg"} href={project.githubLink}>
+          <Button
+            variant="outline-light"
+            size={"lg"}
+            href={project.links.github}
+          >
             <GitHubIcon size={23} style={{ marginBottom: "3px" }} /> Code
           </Button>
         </Col>
         <Col className="col-auto">
-          <Button variant="outline-light" size={"lg"} href={project.demoLink}>
+          <Button variant="outline-light" size={"lg"} href={project.links.live}>
             <PlayCircleFilledWhiteIcon
               size={23}
               style={{ marginBottom: "3px" }}

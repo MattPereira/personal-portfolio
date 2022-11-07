@@ -183,6 +183,9 @@ const Navigation = (props) => {
                     fontWeight: 500,
                     fontSize: "1.1rem",
                     p: 2,
+                    "&:hover": {
+                      color: "rgb(234, 83, 111)",
+                    },
                   }}
                 >
                   {icon} <span style={{ marginLeft: "4px" }}>{text}</span>

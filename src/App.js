@@ -42,14 +42,19 @@ function App() {
       createTheme({
         typography: {
           h2: {
+            fontFamily: "Fredoka One",
+            fontSize: "4rem",
+            fontWeight: 500,
+            paddingBottom: "3rem",
+            textAlign: "center",
+          },
+          h3: {
             fontFamily: "Raleway",
-            fontSize: "3rem",
-            fontWeight: 800,
-            marginBottom: "40px",
+            fontWeight: 400,
           },
           p: {
-            fontSize: "1.5rem",
-            fontFamily: "Montserrat",
+            fontSize: "1.1rem",
+            fontFamily: "Roboto",
             fontWeight: 400,
           },
         },
@@ -57,6 +62,7 @@ function App() {
           text: {
             primary: mode === "light" ? "rgb(50,50,50)" : "#fff",
             secondary: mode === "light" ? "#fff" : "rgb(50,50,50)",
+            highlight: "rgb(234, 82, 111)",
           },
           mode,
           ...(mode === "light"
@@ -101,7 +107,7 @@ function App() {
             init={particlesInit}
           />
 
-          <Box sx={{ pt: "76.609px", pb: "51px" }}>
+          <Box sx={{ pt: "76.609px", pb: "51px", position: "relative" }}>
             <ScrollToTop>
               <Routes>
                 <Route path="/" element={<Home />} />

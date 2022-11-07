@@ -20,57 +20,51 @@ const Landing = () => {
     }, 4000);
   }, []);
 
-  // const particlesInit = useCallback((main) => {
-  //   loadFull(main);
-  // }, []);
-
   return (
-    <>
+    <Box
+      sx={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Box
         sx={{
-          height: "100vh",
+          fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
         }}
       >
-        <Box
-          sx={{
-            fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
-            display: "flex",
-          }}
+        <SvgIcon
+          fontSize="inherit"
+          sx={{ color: theme.palette.background.paper }}
         >
-          <SvgIcon
-            fontSize="inherit"
-            sx={{ color: theme.palette.background.paper }}
-          >
-            <MPLogo />
-          </SvgIcon>
-        </Box>
-
-        <Typography
-          variant="h1"
-          sx={{
-            mb: 1,
-            fontFamily: "Fredoka One",
-            color: theme.palette.background.paper,
-            letterSpacing: "0.4rem",
-            fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
-          }}
-        >
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={nameArray}
-            idx={11}
-          />
-        </Typography>
-        <Box>
-          <Type />
-        </Box>
-        <Socials />
+          <MPLogo />
+        </SvgIcon>
       </Box>
-    </>
+
+      <Typography
+        variant="h1"
+        sx={{
+          mb: 1,
+          fontFamily: "Fredoka One",
+          color: theme.palette.background.paper,
+          letterSpacing: "0.4rem",
+          fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
+        }}
+      >
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={nameArray}
+          idx={11}
+        />
+      </Typography>
+      <Box>
+        <Type />
+      </Box>
+      <Socials />
+    </Box>
   );
 };
 
