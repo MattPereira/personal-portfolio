@@ -13,10 +13,11 @@ const ProjectCard = ({
         <Grid
           item
           xs={12}
-          md={5}
+          md={4}
           sx={{
             backgroundColor: "black",
             borderRadius: { xs: "20px 20px 0 0", md: "20px 0 0 20px" },
+            textAlign: "center",
           }}
         >
           <RRLink to={`/projects/${slug}`} className="text-decoration-none">
@@ -24,11 +25,11 @@ const ProjectCard = ({
               component="img"
               src={logo}
               alt={logo}
-              sx={{ height: "100%", width: "100%" }}
+              sx={{ width: { xs: "70%", md: "100%" } }}
             />
           </RRLink>
         </Grid>
-        <Grid item xs={12} md={7} sx={{ p: 3 }}>
+        <Grid item xs={12} md={8} sx={{ p: 3 }}>
           <Grid
             container
             sx={{
