@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Grid, Typography, Paper, Box } from "@mui/material";
+import { Link as RRLink } from "react-router-dom";
+import { Grid, Typography, Paper, Box, Link } from "@mui/material";
 
 const ProjectCard = ({
   project: { title, logo, links, description, languages, technologies },
@@ -8,7 +8,7 @@ const ProjectCard = ({
 
   const slug = title.toLowerCase().split(" ").join("-");
   return (
-    <Paper sx={{ mb: 4, borderRadius: "20px" }}>
+    <Paper sx={{ mb: 5, borderRadius: "20px", backgroundColor: "white" }}>
       <Grid container>
         <Grid
           item
@@ -19,58 +19,81 @@ const ProjectCard = ({
             borderRadius: { xs: "20px 20px 0 0", md: "20px 0 0 20px" },
           }}
         >
-          <Link to={`/projects/${slug}`} className="text-decoration-none">
+          <RRLink to={`/projects/${slug}`} className="text-decoration-none">
             <Box
               component="img"
               src={logo}
               alt={logo}
               sx={{ height: "100%", width: "100%" }}
             />
-          </Link>
+          </RRLink>
         </Grid>
-        <Grid item xs={12} md={7} sx={{ p: 2 }}>
-          <Box sx={{ mb: 3 }}>
-            <Typography
-              component={Link}
-              to={`/projects/${slug}`}
-              variant="h3"
-              color="text.highlight"
-            >
-              {title}
-            </Typography>
-          </Box>
-
-          <Box sx={{ mb: 3 }}>
-            <Typography variant="p" color="text.secondary">
-              {description}
-            </Typography>
-          </Box>
-
-          <div>
-            <Typography variant="p" color="text.secondary">
-              <strong>Links: </strong>
-              <Link to={`/projects/${slug}`}>Details</Link>,{" "}
-              <a href={links.github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              ,{" "}
-              <a href={links.github} target="_blank" rel="noreferrer">
-                Site
-              </a>
-            </Typography>
-          </div>
-          <div>
-            <Typography variant="p" color="text.secondary">
-              <strong>Languages: </strong>
-              {languages}
-            </Typography>
-          </div>
-          <div>
-            <Typography variant="p" color="text.secondary">
-              <strong>Technologies: </strong>
-              {technologies}
-            </Typography>
-          </div>
+        <Grid item xs={12} md={7} sx={{ p: 3 }}>
+          <Grid
+            container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+            }}
+          >
+            <Grid item sx={{ mb: { xs: 3, lg: 0 } }}>
+              <Box>
+                <Typography
+                  component={RRLink}
+                  to={`/projects/${slug}`}
+                  variant="h3"
+                  color="text.highlight"
+                >
+                  {title}
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box sx={{ mb: { xs: 3, md: 0 } }}>
+                <Typography variant="p" sx={{ color: "rgb(50,50,50)" }}>
+                  {description}
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box sx={{ color: "rgb(50,50,50)" }}>
+                <Typography variant="p">
+                  <strong>
+                    Links:{" "}
+                    <Link
+                      component={RRLink}
+                      to={`/projects/${slug}`}
+                      color="text.highlight"
+                    >
+                      Details
+                    </Link>
+                    ,{" "}
+                    <Link href={links.github} color="text.highlight">
+                      GitHub
+                    </Link>
+                    ,{" "}
+                    <Link href={links.github} color="text.highlight">
+                      Site
+                    </Link>
+                  </strong>
+                </Typography>
+              </Box>
+              <Box sx={{ color: "rgb(50,50,50)" }}>
+                <Typography variant="p">
+                  <strong>Languages: </strong>
+                  {languages}
+                </Typography>
+              </Box>
+              <Box sx={{ color: "rgb(50,50,50)" }}>
+                <Typography variant="p">
+                  <strong>Technologies: </strong>
+                  {technologies}
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Paper>

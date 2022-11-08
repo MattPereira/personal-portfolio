@@ -34,6 +34,7 @@ const Landing = () => {
         sx={{
           fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
           display: "flex",
+          mb: 5,
         }}
       >
         <SvgIcon

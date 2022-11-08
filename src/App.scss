@@ -1,5 +1,4 @@
 @import 'animate.css';
-@import '~loaders.css/src/animations/pacman.scss';
 
 
 .App.page-container {
@@ -7,15 +6,6 @@
   min-height: 100vh;
 }
 
-
-.section-title {
-  color: white;
-  font-family: "Raleway", sans-serif;
-  font-size: 3rem;
-  font-weight: 800 !important;
-  text-align: center;
-  margin-bottom: 40px;
-}
 
 span.pink {
   color: #EA526F;
@@ -33,20 +23,3 @@ strong.blue {
   color: #23B5D3;
 }
 
-.loader-hidden {
-  display: none;
-}
-
-.loader-active {
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  height: 50px;
-  animation: fadeOut 1s 1s;
-  animation-fill-mode: forwards;
-}

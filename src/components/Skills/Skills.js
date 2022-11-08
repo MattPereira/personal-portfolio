@@ -6,7 +6,7 @@ import AnimatedLetters from "../AnimatedLetters";
 
 import { skillsImage } from "../../utils/skillsImage";
 
-import { Typography } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 
 const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -38,7 +38,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="Skills my-5 py-5">
+    <Container sx={{ py: 5 }}>
       <Typography variant="h2" color="text.primary">
         <AnimatedLetters
           letterClass={letterClass}
@@ -73,7 +73,7 @@ const Skills = () => {
           </Marquee>
         </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

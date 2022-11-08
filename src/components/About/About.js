@@ -1,7 +1,6 @@
-import "./About.scss";
 import { useEffect, useState } from "react";
 
-import { Row, Col } from "react-bootstrap";
+import { Grid, Typography, Container, Box } from "@mui/material";
 
 import selfie from "../../assets/images/selfie.jpg";
 import AnimatedLetters from "../AnimatedLetters";
@@ -16,8 +15,8 @@ const About = () => {
   }, []);
 
   return (
-    <section className="my-5 py-5">
-      <h1 className="section-title mb-5">
+    <Container sx={{ py: 5 }}>
+      <Typography variant="h2" color="text.primary">
         <AnimatedLetters
           letterClass={letterClass}
           strArray={"Who ".split("")}
@@ -30,27 +29,27 @@ const About = () => {
             idx={13}
           />
         </span>
-      </h1>
+      </Typography>
 
-      <Row className="justify-content-center align-items-center">
-        <Col lg={6}>
-          <div className="d-flex justify-content-center">
-            <img src={selfie} className="img-fluid selfie" alt="selfie" />
-          </div>
-        </Col>
-        <Col lg={6} className="text-white">
-          <p className="lead">
+      <Grid container>
+        <Grid item lg={6} sx={{ textAlign: "center" }}>
+          <Box
+            component="img"
+            src={selfie}
+            alt="selfie"
+            sx={{ width: "75%", borderRadius: "50%" }}
+          />
+        </Grid>
+        <Grid item lg={6} sx={{ display: "flex", alignItems: "center" }}>
+          <Typography variant="p" color="text.primary">
             I am a full stack web developer looking for opportunities to
             contribute to meaningful projects that have a positive impact on
-            society.
-          </p>
-          <p className="lead">
-            I am also an open source enthusiast and an aficionado of Linux
+            society. I am also an open source enthusiast and a fanatic of Linux
             distributions based on Debian like Ubuntu.
-          </p>
-        </Col>
-      </Row>
-    </section>
+          </Typography>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

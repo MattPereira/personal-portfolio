@@ -1,8 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Container, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import "./App.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navigation from "./components/Navigation/Navigation";
@@ -10,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import ProjectDetails from "./pages/Projects/ProjectDetails";
+import ProjectDetails from "./components/Projects/ProjectDetails";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 
@@ -27,7 +26,7 @@ function App() {
     loadFull(main);
   }, []);
 
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
@@ -49,13 +48,24 @@ function App() {
             textAlign: "center",
           },
           h3: {
-            fontFamily: "Raleway",
+            fontFamily: "Carter One",
             fontWeight: 400,
           },
           p: {
             fontSize: "1.1rem",
             fontFamily: "Roboto",
             fontWeight: 400,
+          },
+        },
+        components: {
+          MuiButton: {
+            styleOverrides: {
+              root: {
+                fontFamily: "Montserrat",
+                fontWeight: 600,
+                color: mode === "light" ? "rgb(50,50,50)" : "#fff",
+              },
+            },
           },
         },
         palette: {
@@ -96,7 +106,7 @@ function App() {
             backgroundColor:
               theme.palette.mode === "dark"
                 ? theme.palette.background.default
-                : "transparent",
+                : "#eeeeee",
           }}
         >
           <Navigation />

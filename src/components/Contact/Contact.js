@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-import Loader from "react-loaders";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import AnimatedLetters from "../AnimatedLetters";
-import "./Contact.scss";
 import selfie from "../../assets/images/selfie.jpg";
 
-import { Row, Col, Button, Form, Alert } from "react-bootstrap";
+import {
+  Typography,
+  Grid,
+  Container,
+  Box,
+  Button,
+  Alert,
+  TextField,
+} from "@mui/material";
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -43,88 +49,116 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <section className="container py-xl-5">
-        <h1 className="section-title mb-md-5 mb-0">
-          <span className="pink">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={"Contact".split("")}
-              idx={10}
-            />
-          </span>
+    <Container sx={{ py: 5 }}>
+      <Typography variant="h2" color="text.primary">
+        <span className="pink">
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={" Me!".split("")}
-            idx={17}
+            strArray={"Contact".split("")}
+            idx={10}
           />
-        </h1>
+        </span>
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={" Me!".split("")}
+          idx={17}
+        />
+      </Typography>
 
-        <Row className="justify-content-center align-items-center py-5">
-          <Col lg={5} xl={6}>
-            <div className="d-flex justify-content-center text-center mb-5">
-              <img
-                src={selfie}
-                className="img-fluid rounded-circle selfie"
-                alt="selfie"
-              />
-            </div>
-          </Col>
-          <Col lg={7} xl={6} className="mb-5">
-            <p className="text-white lead">
+      <Grid container>
+        <Grid item lg={5} xl={6}>
+          <div className="d-flex justify-content-center text-center mb-5">
+            <Box
+              component="img"
+              sx={{ width: "75%", borderRadius: "50%" }}
+              src={selfie}
+              alt="selfie"
+            />
+          </div>
+        </Grid>
+        <Grid item lg={7} xl={6}>
+          <Box sx={{ mb: 5 }}>
+            <Typography variant="p" color="text.primary">
               I am interested in both freelance and employment opportunities.
               Prospective clients are welcome to message me using the form
               below!
-            </p>
+            </Typography>
             {status === true ? (
-              <Alert variant="success">
+              <Alert severity="success">
                 Message successfully sent! I will respond as soon as possible!
               </Alert>
             ) : status === false ? (
-              <Alert variant="danger">
+              <Alert severity="error">
                 Failed to send the message, but you can email me directly at{" "}
                 <a href="mailto:matthewdavidpereira@gmail.org">
                   matthewdavidpereira@gmail.org
                 </a>
               </Alert>
             ) : null}
-            <div>
-              <Form ref={form} onSubmit={sendEmail} className="text-end">
-                <div className="name-input mb-2">
-                  <Form.Control
-                    placeholder="Name"
-                    type="text"
-                    name="name"
-                    required
-                  />
-                </div>
-                <div className="email-input mb-2">
-                  <Form.Control
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                </div>
-                <div className="message-input mb-2">
-                  <Form.Control
-                    placeholder="Message"
-                    as="textarea"
-                    rows="5"
-                    name="message"
-                    required
-                  />
-                </div>
-                <Button type="submit" className="send-button fw-bold">
-                  SEND
-                </Button>
-              </Form>
-            </div>
-          </Col>
-        </Row>
-      </section>
-      <Loader type="line-scale-pulse-out" />
-    </>
+          </Box>
+
+          <Box component="form" onSubmit={sendEmail}>
+            <Box
+              sx={{
+                opacity: 0,
+                animation: "fadeInUp 1s 1s",
+                animationFillMode: "forwards",
+                mb: 2,
+              }}
+            >
+              <TextField
+                label="Name"
+                variant="filled"
+                type="text"
+                name="name"
+                required
+                sx={{ width: "100%" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                opacity: 0,
+                animation: "fadeInUp 2s 2s",
+                animationFillMode: "forwards",
+                mb: 2,
+              }}
+            >
+              <TextField
+                label="Email"
+                variant="filled"
+                type="email"
+                name="email"
+                required
+                sx={{ width: "100%" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                opacity: 0,
+                animation: "fadeInUp 3s 3s",
+                animationFillMode: "forwards",
+                mb: 2,
+              }}
+            >
+              <TextField
+                label="Message"
+                multiline
+                minRows={5}
+                variant="filled"
+                name="message"
+                required
+                sx={{ width: "100%" }}
+              />
+            </Box>
+            <Box sx={{ textAlign: "end" }}>
+              <Button type="submit" variant="contained">
+                SEND
+              </Button>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
