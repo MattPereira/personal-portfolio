@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import { Grid, Typography, Container, Box } from "@mui/material";
-
 import selfie from "../../assets/images/selfie.jpg";
 import AnimatedLetters from "../AnimatedLetters";
 

@@ -1,7 +1,3 @@
-import "./index.scss";
-
-import "./index.scss";
-
 import About from "../../components/About/About";
 import Skills from "../../components/Skills/Skills";
 

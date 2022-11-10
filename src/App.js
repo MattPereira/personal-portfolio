@@ -8,8 +8,9 @@ import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Projects from "./pages/Projects";
-import ProjectDetails from "./components/Projects/ProjectDetails";
+import Experience from "./pages/Experience";
+import ProjectList from "./pages/Projects/ProjectList";
+import ProjectDetails from "./pages/Projects/ProjectDetails";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 
@@ -122,7 +123,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/projects" element={<ProjectList />} />
                 <Route path="/projects/:name" element={<ProjectDetails />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/contact" element={<Contact />} />

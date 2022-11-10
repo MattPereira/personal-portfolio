@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 
-import Type from "./Type";
 import AnimatedLetters from "../AnimatedLetters";
 import Socials from "../Socials/Socials";
-
 import { Box, Typography, SvgIcon } from "@mui/material";
 import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_circle.svg";
 
@@ -61,9 +59,6 @@ const Landing = () => {
           idx={11}
         />
       </Typography>
-      <Box>
-        <Type />
-      </Box>
       <Socials />
     </Box>
   );

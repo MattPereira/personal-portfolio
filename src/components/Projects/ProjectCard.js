@@ -45,7 +45,7 @@ const ProjectCard = ({
                   component={RRLink}
                   to={`/projects/${slug}`}
                   variant="h3"
-                  color="text.highlight"
+                  sx={{ color: "#23B5D3" }}
                 >
                   {title}
                 </Typography>

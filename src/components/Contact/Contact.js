@@ -3,13 +3,13 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import AnimatedLetters from "../AnimatedLetters";
 import selfie from "../../assets/images/selfie.jpg";
+import StyledButton from "../StyledButton";
 
 import {
   Typography,
   Grid,
   Container,
   Box,
-  Button,
   Alert,
   TextField,
 } from "@mui/material";
@@ -65,18 +65,16 @@ const Contact = () => {
         />
       </Typography>
 
-      <Grid container>
-        <Grid item lg={5} xl={6}>
-          <div className="d-flex justify-content-center text-center mb-5">
-            <Box
-              component="img"
-              sx={{ width: "75%", borderRadius: "50%" }}
-              src={selfie}
-              alt="selfie"
-            />
-          </div>
+      <Grid container spacing={3} sx={{ justifyContent: "center" }}>
+        <Grid item sm={7} md={5} xl={6} sx={{ textAlign: "center" }}>
+          <Box
+            component="img"
+            sx={{ width: "75%", borderRadius: "50%", mb: { xs: 4, sm: 0 } }}
+            src={selfie}
+            alt="selfie"
+          />
         </Grid>
-        <Grid item lg={7} xl={6}>
+        <Grid item sm={10} md={7} xl={6}>
           <Box sx={{ mb: 5 }}>
             <Typography variant="p" color="text.primary">
               I am interested in both freelance and employment opportunities.
@@ -108,11 +106,14 @@ const Contact = () => {
             >
               <TextField
                 label="Name"
-                variant="filled"
+                variant="outlined"
                 type="text"
                 name="name"
                 required
-                sx={{ width: "100%" }}
+                sx={{
+                  width: "100%",
+                  ".MuiFormLabel-root": { color: "text.primary" },
+                }}
               />
             </Box>
             <Box
@@ -125,11 +126,14 @@ const Contact = () => {
             >
               <TextField
                 label="Email"
-                variant="filled"
+                variant="outlined"
                 type="email"
                 name="email"
                 required
-                sx={{ width: "100%" }}
+                sx={{
+                  width: "100%",
+                  ".MuiFormLabel-root": { color: "text.primary" },
+                }}
               />
             </Box>
             <Box
@@ -144,16 +148,17 @@ const Contact = () => {
                 label="Message"
                 multiline
                 minRows={5}
-                variant="filled"
+                variant="outlined"
                 name="message"
                 required
-                sx={{ width: "100%" }}
+                sx={{
+                  width: "100%",
+                  ".MuiFormLabel-root": { color: "text.primary" },
+                }}
               />
             </Box>
             <Box sx={{ textAlign: "end" }}>
-              <Button type="submit" variant="contained">
-                SEND
-              </Button>
+              <StyledButton type="submit">SEND</StyledButton>
             </Box>
           </Box>
         </Grid>

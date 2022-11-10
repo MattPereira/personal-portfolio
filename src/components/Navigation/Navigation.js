@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
@@ -32,19 +32,19 @@ import ModeSwitch from "./ModeSwitch";
 
 const navItems = [
   {
-    text: "Home",
-    icon: <CottageOutlinedIcon />,
-    path: "/",
-  },
-  {
     text: "About",
     icon: <PersonOutlineOutlinedIcon />,
     path: "/about",
   },
   {
     text: "Projects",
-    icon: <WorkOutlineIcon />,
+    icon: <LightbulbOutlinedIcon />,
     path: "/projects",
+  },
+  {
+    text: "Experience",
+    icon: <WorkOutlineIcon />,
+    path: "/experience",
   },
   {
     text: "Resume",
