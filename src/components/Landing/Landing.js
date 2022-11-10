@@ -6,7 +6,7 @@ import AnimatedLetters from "../AnimatedLetters";
 import Socials from "../Socials/Socials";
 
 import { Box, Typography, SvgIcon } from "@mui/material";
-import { ReactComponent as MPLogo } from "../../assets/images/mp/mp_cut_out_black.svg";
+import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_circle.svg";
 
 const Landing = () => {
   const theme = useTheme();

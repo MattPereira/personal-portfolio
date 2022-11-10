@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
-import ModeSwitch from "./ModeSwitch";
-import { NavLink } from "react-router-dom";
-
-import { ReactComponent as MPLogo } from "../../assets/images/mp/mp_logo_black.svg";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 import {
   AppBar,
@@ -23,13 +27,8 @@ import {
   SvgIcon,
 } from "@mui/material";
 
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_letters.svg";
+import ModeSwitch from "./ModeSwitch";
 
 const navItems = [
   {
@@ -150,12 +149,12 @@ const Navigation = (props) => {
                   color:
                     theme.palette.mode === "light"
                       ? scrolled
-                        ? "white"
-                        : theme.palette.background.paper
+                        ? theme.palette.text.secondary
+                        : theme.palette.text.primary
                       : theme.palette.mode === "dark"
                       ? scrolled
-                        ? theme.palette.background.default
-                        : theme.palette.background.paper
+                        ? theme.palette.text.secondary
+                        : theme.palette.text.primary
                       : "white",
                 }}
                 fontSize="large"
@@ -222,60 +221,6 @@ const Navigation = (props) => {
           {drawer}
         </Drawer>
       </Box>
-
-      {/* <Navbar
-        collapseOnSelect
-        expand="lg"
-        className={navColour ? "sticky" : "navbar"}
-        variant="light"
-        fixed="top"
-      >
-        <Container>
-          <Navbar.Brand
-            eventkey={1}
-            as={NavLink}
-            to="/"
-            className="navbar-brand"
-          >
-            {navColour ? (
-              <img src={logoBlack} className="img-fluid logo" alt="brand" />
-            ) : (
-              <img src={logoWhite} className="img-fluid logo" alt="brand" />
-            )}
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto" defaultActiveKey="#home">
-              <Nav.Item>
-                <Nav.Link eventkey={2} as={NavLink} to="/">
-                  <CottageOutlinedIcon sx={{ marginBottom: "2px" }} /> Home
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventkey={3} as={NavLink} to="/about">
-                  <PersonOutlineOutlinedIcon sx={{ marginBottom: "2px" }} />{" "}
-                  About
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventkey={4} as={NavLink} to="/projects">
-                  <WorkOutlineIcon sx={{ marginBottom: "2px" }} /> Projects
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventkey={5} as={NavLink} to="/resume">
-                  <ArticleOutlinedIcon sx={{ marginBottom: "2px" }} /> Resume
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventkey={6} as={NavLink} to="/contact">
-                  <MailOutlinedIcon sx={{ marginBottom: "2px" }} /> Contact
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
     </>
   );
 };
