@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 import { useTheme } from "@mui/material/styles";
 
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
@@ -9,6 +10,7 @@ import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
 
 import {
   AppBar,
@@ -25,6 +27,7 @@ import {
   ListItemIcon,
   Grid,
   SvgIcon,
+  Link,
 } from "@mui/material";
 
 import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_letters.svg";
@@ -34,27 +37,27 @@ const navItems = [
   {
     text: "About",
     icon: <PersonOutlineOutlinedIcon />,
-    path: "/about",
+    path: "#about",
+  },
+  {
+    text: "Skills",
+    icon: <StarOutlineOutlinedIcon />,
+    path: "#skills",
   },
   {
     text: "Projects",
     icon: <LightbulbOutlinedIcon />,
-    path: "/projects",
+    path: "#projects",
   },
   {
     text: "Experience",
     icon: <WorkOutlineIcon />,
-    path: "/experience",
-  },
-  {
-    text: "Resume",
-    icon: <ArticleOutlinedIcon />,
-    path: "/resume",
+    path: "#experience",
   },
   {
     text: "Contact",
     icon: <MailOutlinedIcon />,
-    path: "/contact",
+    path: "#contact",
   },
 ];
 
@@ -107,7 +110,7 @@ const Navigation = (props) => {
           return (
             <ListItem key={text} disablePadding>
               <ListItemButton
-                component={NavLink}
+                component={HashLink}
                 to={path}
                 sx={{ justifyContent: "center", fontSize: "1.3rem" }}
               >
@@ -142,7 +145,7 @@ const Navigation = (props) => {
         elevation={scrolled ? 8 : 0}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <NavLink to="/">
+          <HashLink to="/">
             <Box sx={{ width: "62px" }}>
               <SvgIcon
                 sx={{
@@ -162,7 +165,7 @@ const Navigation = (props) => {
                 <MPLogo />
               </SvgIcon>
             </Box>
-          </NavLink>
+          </HashLink>
 
           <Box
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
@@ -173,7 +176,7 @@ const Navigation = (props) => {
               return (
                 <Button
                   key={text}
-                  component={NavLink}
+                  component={HashLink}
                   to={path}
                   sx={{
                     color: scrolled ? "text.secondary" : "text.primary",
@@ -191,6 +194,24 @@ const Navigation = (props) => {
                 </Button>
               );
             })}
+            <Button
+              component={Link}
+              href="https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"
+              sx={{
+                color: scrolled ? "text.secondary" : "text.primary",
+                textTransform: "none",
+                fontFamily: "Montserrat",
+                fontWeight: 500,
+                fontSize: "1.1rem",
+                p: 2,
+                "&:hover": {
+                  color: "rgb(234, 83, 111)",
+                },
+              }}
+            >
+              <ArticleOutlinedIcon />{" "}
+              <span style={{ marginLeft: "4px" }}>Resume</span>
+            </Button>
           </Box>
           <ModeSwitch />
 

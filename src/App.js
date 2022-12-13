@@ -3,24 +3,18 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import "./App.scss";
 
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./utils/ScrollToTop";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Experience from "./pages/Experience";
-import ProjectList from "./pages/Projects/ProjectList";
-import ProjectDetails from "./pages/Projects/ProjectDetails";
-import Resume from "./pages/Resume";
-import Contact from "./pages/Contact";
+import Homepage from "./components/Homepage";
 
 import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material";
-import ColorModeContext from "./ColorModeContext";
-
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import particlesDark from "./particlesDark.json";
-import particlesLight from "./particlesLight.json";
+
+import ColorModeContext from "./utils/ColorModeContext";
+import particlesDark from "./utils/particles/darkMode.json";
+import particlesLight from "./utils/particles/lightMode.json";
 
 function App() {
   const particlesInit = useCallback((main) => {
@@ -49,12 +43,12 @@ function App() {
             textAlign: "center",
           },
           h3: {
-            fontFamily: "Carter One",
-            fontWeight: 400,
+            fontFamily: "Poppins",
+            fontWeight: 500,
           },
           p: {
             fontSize: "1.1rem",
-            fontFamily: "Roboto",
+            fontFamily: "Poppins",
             fontWeight: 400,
           },
         },
@@ -121,13 +115,7 @@ function App() {
           <Box sx={{ pt: "76.609px", pb: "51px", position: "relative" }}>
             <ScrollToTop>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/experience" element={<Experience />} />
-                <Route path="/projects" element={<ProjectList />} />
-                <Route path="/projects/:name" element={<ProjectDetails />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/" element={<Homepage />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </ScrollToTop>

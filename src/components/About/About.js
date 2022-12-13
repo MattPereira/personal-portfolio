@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Grid, Typography, Container, Box } from "@mui/material";
 import selfie from "../../assets/images/selfie.jpg";
-import AnimatedLetters from "../AnimatedLetters";
+import AnimatedLetters from "../../utils/AnimatedLetters";
 
 const About = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -13,7 +13,7 @@ const About = () => {
   }, []);
 
   return (
-    <Container sx={{ py: 5 }}>
+    <Container sx={{ py: 5 }} id="about">
       <Typography variant="h2" color="text.primary">
         <AnimatedLetters
           letterClass={letterClass}

@@ -8,28 +8,18 @@ const ProjectCard = ({
 
   const slug = title.toLowerCase().split(" ").join("-");
   return (
-    <Paper sx={{ mb: 5, borderRadius: "20px", backgroundColor: "white" }}>
-      <Grid container>
-        <Grid
-          item
-          xs={12}
-          md={4}
-          sx={{
-            backgroundColor: "black",
-            borderRadius: { xs: "20px 20px 0 0", md: "20px 0 0 20px" },
-            textAlign: "center",
-          }}
-        >
-          <RRLink to={`/projects/${slug}`} className="text-decoration-none">
-            <Box
-              component="img"
-              src={logo}
-              alt={logo}
-              sx={{ width: { xs: "70%", md: "100%" } }}
-            />
-          </RRLink>
-        </Grid>
-        <Grid item xs={12} md={8} sx={{ p: 3 }}>
+    <Grid item xs={12} md={6} lg={4}>
+      <Paper sx={{ mb: 5, borderRadius: "30px", backgroundColor: "white" }}>
+        <Box sx={{ backgroundColor: "black", borderRadius: "30px" }}>
+          <Box
+            component="img"
+            src={logo}
+            alt={logo}
+            sx={{ width: { xs: "70%", md: "100%" } }}
+          />
+        </Box>
+
+        <Box sx={{ p: 2 }}>
           <Grid
             container
             sx={{
@@ -39,18 +29,7 @@ const ProjectCard = ({
               height: "100%",
             }}
           >
-            <Grid item sx={{ mb: { xs: 3, lg: 0 } }}>
-              <Box>
-                <Typography
-                  component={RRLink}
-                  to={`/projects/${slug}`}
-                  variant="h3"
-                  sx={{ color: "#23B5D3" }}
-                >
-                  {title}
-                </Typography>
-              </Box>
-            </Grid>
+            <Grid item sx={{ mb: { xs: 3, lg: 0 } }}></Grid>
             <Grid item>
               <Box sx={{ mb: { xs: 3, md: 0 } }}>
                 <Typography variant="p" sx={{ color: "rgb(50,50,50)" }}>
@@ -95,9 +74,9 @@ const ProjectCard = ({
               </Box>
             </Grid>
           </Grid>
-        </Grid>
-      </Grid>
-    </Paper>
+        </Box>
+      </Paper>
+    </Grid>
   );
 };
 

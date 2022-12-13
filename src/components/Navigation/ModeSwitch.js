@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import { FormGroup, FormControlLabel, Switch } from "@mui/material";
 
-import ColorModeContext from "../../ColorModeContext";
+import ColorModeContext from "../../utils/ColorModeContext";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,

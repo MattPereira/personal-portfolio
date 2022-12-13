@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import AnimatedLetters from "../AnimatedLetters";
+import AnimatedLetters from "../../utils/AnimatedLetters";
 
 import { Typography, Container, Box } from "@mui/material";
 import codeForSf from "../../assets/images/code_for_sf.png";
@@ -16,7 +16,7 @@ const Experience = () => {
     }, 3000);
   }, []);
   return (
-    <Container sx={{ py: 5 }}>
+    <Container sx={{ py: 5 }} id="experience">
       <Typography variant="h2" color="text.primary">
         <AnimatedLetters
           letterClass={letterClass}

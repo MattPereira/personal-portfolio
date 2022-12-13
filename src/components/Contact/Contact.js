@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import AnimatedLetters from "../AnimatedLetters";
+import AnimatedLetters from "../../utils/AnimatedLetters";
 import selfie from "../../assets/images/selfie.jpg";
-import StyledButton from "../StyledButton";
 
 import {
   Typography,
@@ -12,6 +11,7 @@ import {
   Box,
   Alert,
   TextField,
+  Button,
 } from "@mui/material";
 
 const Contact = () => {
@@ -49,7 +49,7 @@ const Contact = () => {
   };
 
   return (
-    <Container sx={{ py: 5 }}>
+    <Container sx={{ py: 5 }} id="contact">
       <Typography variant="h2" color="text.primary">
         <span className="pink">
           <AnimatedLetters
@@ -158,7 +158,9 @@ const Contact = () => {
               />
             </Box>
             <Box sx={{ textAlign: "end" }}>
-              <StyledButton type="submit">SEND</StyledButton>
+              <Button variant="contained" type="submit">
+                SEND
+              </Button>
             </Box>
           </Box>
         </Grid>

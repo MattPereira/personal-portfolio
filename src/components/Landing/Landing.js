@@ -1,10 +1,29 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
-import AnimatedLetters from "../AnimatedLetters";
-import Socials from "../Socials/Socials";
-import { Box, Typography, SvgIcon } from "@mui/material";
+import AnimatedLetters from "../../utils/AnimatedLetters";
+import { Box, Typography, SvgIcon, Grid, Button } from "@mui/material";
 import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_circle.svg";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  borderColor: theme.palette.text.primary,
+  px: 3,
+  py: 1,
+  borderRadius: "10px",
+  fontSize: "1.25rem",
+  fontFamily: "Montserrat",
+  textTransform: "none",
+  border: "2px solid",
+  "&:hover": {
+    backgroundColor: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
+    border: "2px solid",
+  },
+}));
 
 const Landing = () => {
   const theme = useTheme();
@@ -59,7 +78,27 @@ const Landing = () => {
           idx={11}
         />
       </Typography>
-      <Socials />
+      <Grid container sx={{ py: 3 }} spacing={1} justifyContent="center">
+        <Grid item>
+          <StyledButton
+            href="https://www.linkedin.com/in/-matt-pereira-/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon fontSize="large" /> &nbsp; GitHub
+          </StyledButton>
+        </Grid>
+        <Grid item>
+          <StyledButton
+            href="https://www.linkedin.com/in/-matt-pereira-/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Linked&nbsp;
+            <LinkedInIcon fontSize="large" />
+          </StyledButton>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

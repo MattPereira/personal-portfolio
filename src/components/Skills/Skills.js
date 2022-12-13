@@ -2,9 +2,9 @@ import "./Skills.scss";
 import { useEffect, useState } from "react";
 
 import Marquee from "react-fast-marquee";
-import AnimatedLetters from "../AnimatedLetters";
+import AnimatedLetters from "../../utils/AnimatedLetters";
 
-import { skillsImage } from "../../utils/skillsImage";
+import { skillsImage } from "../../utils/skillsImages";
 
 import { Typography, Container } from "@mui/material";
 
@@ -38,7 +38,7 @@ const Skills = () => {
   };
 
   return (
-    <Container sx={{ py: 5 }}>
+    <Container sx={{ py: 5 }} id="skills">
       <Typography variant="h2" color="text.primary">
         <AnimatedLetters
           letterClass={letterClass}

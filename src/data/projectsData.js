@@ -18,10 +18,10 @@ export const projectsData = [
       live: "https://ccgc.surge.sh/",
     },
     languages: ["Javascript, HTML, CSS"],
-    technologies: ["React, Express, PostgreSQL, Material-UI"],
+    technologies: ["React, Express, PostgreSQL, Material-UI, Railway, Surge"],
     screenshots: [ccgc1, ccgc2],
     description:
-      "A full stack, single page web application for a local golf organization with a custom built internal API, full CRUD, user authentication, multi-tiered authorization levels, and a tour points system that incorporates handicaps to determine champion based on all rounds inputted.",
+      "A full stack, single page web app for a local golf organization featuring a custom built API, full CRUD functionality, user authentication, and a tour points system incorporating handicaps to determine a champion based on all rounds inputted.",
   },
   {
     title: "No Fun League",
@@ -31,10 +31,10 @@ export const projectsData = [
       live: "https://github.com/MattPereira/no-fun-league",
     },
     languages: ["Python, HTML, CSS"],
-    technologies: ["Flask, PostgreSQL, SQLAlchemy, Jinja, Bootstrap"],
+    technologies: ["Flask, PostgreSQL, SQLAlchemy, Jinja, Bootstrap, Railway"],
     screenshots: [nfl1, nfl2],
     description:
-      "A full stack web application I built for a personal fantasy football league. All of the roster, draft, and player data is sourced from the Sleeper API. The site serves the members of the league by providing them with updated information about their rosters and past league drafts. Additionally, the site allows league members to edit their manager profile information, create blog posts, propose rule changes, and vote on those proposed rule changes.",
+      "A full stack web app for my fantasy football league. All of the roster, draft, and player data is sourced from the Sleeper API. The site serves the members of the league by providing them with updated information about their rosters and past league drafts. Additionally, league members can edit their profiles, create blog posts, and vote on proposed rule changes.",
   },
   {
     title: "Tabernacle School",
@@ -43,10 +43,10 @@ export const projectsData = [
       github: "https://tabernacle.school",
       live: "https://github.com/MattPereira/tabernacle-frontend",
     },
-    languages: ["Javascript, HTML, SCSS"],
-    technologies: ["React, Material-UI, Strapi "],
+    languages: ["Javascript, HTML, CSS"],
+    technologies: ["React, Material-UI, Strapi, Heroku, Surge"],
     screenshots: [ts1, ts2],
     description:
-      "A single page web application I built for Tabernacle School. The site advertises to prospective families and provides current families with essential documents, calendars, and instructions. Features include forms that allow users to send an email to the school, a FullCalender that fetches data from the school’s google calendar, and astute incorporation of Bootstrap’s layout, content, and components functionalities.",
+      "A single page web application for Tabernacle School. The site advertises to prospective families and provides current families with essential documents and information. Features include forms that allow users to send an email to the school and extensive use of Material UI.",
   },
 ];
