@@ -206,6 +206,7 @@ const Navigation = (props) => {
             <Button
               component={Link}
               href="https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"
+              target="_blank"
               sx={{
                 color: scrolled ? "text.secondary" : "text.primary",
                 textTransform: "none",
