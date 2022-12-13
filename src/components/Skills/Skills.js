@@ -1,12 +1,10 @@
-import "./Skills.scss";
 import { useEffect, useState } from "react";
 
-import Marquee from "react-fast-marquee";
 import AnimatedLetters from "../../utils/AnimatedLetters";
-
 import { skillsImage } from "../../utils/skillsImages";
 
-import { Typography, Container } from "@mui/material";
+import { Typography, Container, Grid, Box } from "@mui/material";
+import "./Skills.scss";
 
 const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -21,21 +19,22 @@ const Skills = () => {
     "html",
     "css",
     "javascript",
+    "python",
+    "postgresql",
     "react",
     "express",
-    "postgresql",
-    "python",
     "flask",
     "bootstrap",
+    "materialui",
+    "markdown",
     "git",
-    "heroku",
+    "github",
+    "docker",
+    "firebase",
+    "gcp",
+    "figma",
     "ubuntu",
   ];
-
-  const skillBoxStyle = {
-    backgroundColor: "#F7F7FF",
-    boxShadow: `0px 0px 30px #F7F7FF`,
-  };
 
   return (
     <Container sx={{ py: 5 }} id="skills">
@@ -53,26 +52,19 @@ const Skills = () => {
           />
         </span>
       </Typography>
-      <div className="skillsContainer">
-        <div className="skill--scroll">
-          <Marquee
-            gradient={false}
-            speed={80}
-            pauseOnHover={true}
-            pauseOnClick={true}
-            delay={0}
-            play={true}
-            direction="left"
-          >
-            {skillsData.map((skill, id) => (
-              <div className="skill--box" key={id} style={skillBoxStyle}>
-                <img src={skillsImage(skill)} alt={skill} />
-                <h3 style={{ color: "#070600" }}>{skill}</h3>
-              </div>
-            ))}
-          </Marquee>
-        </div>
-      </div>
+
+      <Grid container spacing={5}>
+        {skillsData.map((skill, id) => (
+          <Grid item xs={4} sm={3} md={2} lg={2} key={id}>
+            <Box
+              component="img"
+              src={skillsImage(skill)}
+              alt={skill}
+              sx={{ width: "100%" }}
+            />
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   );
 };

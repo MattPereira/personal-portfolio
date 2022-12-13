@@ -38,68 +38,70 @@ const Landing = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <section id="landing">
       <Box
         sx={{
-          fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
+          height: "100vh",
           display: "flex",
-          mb: 5,
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <SvgIcon
-          fontSize="inherit"
-          sx={{ color: theme.palette.background.paper }}
+        <Box
+          sx={{
+            fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
+            display: "flex",
+            mb: 5,
+          }}
         >
-          <MPLogo />
-        </SvgIcon>
-      </Box>
+          <SvgIcon
+            fontSize="inherit"
+            sx={{ color: theme.palette.background.paper }}
+          >
+            <MPLogo />
+          </SvgIcon>
+        </Box>
 
-      <Typography
-        variant="h1"
-        sx={{
-          mb: 1,
-          fontFamily: "Fredoka One",
-          color: theme.palette.background.paper,
-          letterSpacing: "0.4rem",
-          fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
-        }}
-      >
-        <AnimatedLetters
-          letterClass={letterClass}
-          strArray={nameArray}
-          idx={11}
-        />
-      </Typography>
-      <Grid container sx={{ py: 3 }} spacing={1} justifyContent="center">
-        <Grid item>
-          <StyledButton
-            href="https://www.linkedin.com/in/-matt-pereira-/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GitHubIcon fontSize="large" /> &nbsp; GitHub
-          </StyledButton>
+        <Typography
+          variant="h1"
+          sx={{
+            mb: 1,
+            fontFamily: "Fredoka One",
+            color: theme.palette.background.paper,
+            letterSpacing: "0.4rem",
+            fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
+          }}
+        >
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={nameArray}
+            idx={11}
+          />
+        </Typography>
+        <Grid container sx={{ py: 3 }} spacing={1} justifyContent="center">
+          <Grid item>
+            <StyledButton
+              href="https://www.linkedin.com/in/-matt-pereira-/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon fontSize="large" /> &nbsp; GitHub
+            </StyledButton>
+          </Grid>
+          <Grid item>
+            <StyledButton
+              href="https://www.linkedin.com/in/-matt-pereira-/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Linked&nbsp;
+              <LinkedInIcon fontSize="large" />
+            </StyledButton>
+          </Grid>
         </Grid>
-        <Grid item>
-          <StyledButton
-            href="https://www.linkedin.com/in/-matt-pereira-/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Linked&nbsp;
-            <LinkedInIcon fontSize="large" />
-          </StyledButton>
-        </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </section>
   );
 };
 

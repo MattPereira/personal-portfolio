@@ -109,20 +109,24 @@ const Navigation = (props) => {
           const { text, icon, path } = item;
           return (
             <ListItem key={text} disablePadding>
-              <ListItemButton
-                component={HashLink}
-                to={path}
-                sx={{ justifyContent: "center", fontSize: "1.3rem" }}
-              >
-                <ListItemIcon
-                  sx={{ justifyContent: "center", color: "text.secondary" }}
+              <HashLink smooth to={path}>
+                <ListItemButton
+                  to={path}
+                  sx={{ justifyContent: "center", fontSize: "1.3rem" }}
                 >
-                  {icon}
-                </ListItemIcon>
-                <Typography sx={{ color: "text.secondary" }} fontSize="inherit">
-                  {text}
-                </Typography>
-              </ListItemButton>
+                  <ListItemIcon
+                    sx={{ justifyContent: "center", color: "text.secondary" }}
+                  >
+                    {icon}
+                  </ListItemIcon>
+                  <Typography
+                    sx={{ color: "text.secondary" }}
+                    fontSize="inherit"
+                  >
+                    {text}
+                  </Typography>
+                </ListItemButton>
+              </HashLink>
             </ListItem>
           );
         })}
@@ -145,7 +149,7 @@ const Navigation = (props) => {
         elevation={scrolled ? 8 : 0}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <HashLink to="/">
+          <HashLink smooth to="/#landing">
             <Box sx={{ width: "62px" }}>
               <SvgIcon
                 sx={{
@@ -174,24 +178,29 @@ const Navigation = (props) => {
             {navItems.map((item) => {
               const { text, icon, path } = item;
               return (
-                <Button
-                  key={text}
-                  component={HashLink}
+                <HashLink
+                  smooth
                   to={path}
-                  sx={{
-                    color: scrolled ? "text.secondary" : "text.primary",
-                    textTransform: "none",
-                    fontFamily: "Montserrat",
-                    fontWeight: 500,
-                    fontSize: "1.1rem",
-                    p: 2,
-                    "&:hover": {
-                      color: "rgb(234, 83, 111)",
-                    },
-                  }}
+                  key={text}
+                  style={{ textDecoration: "none" }}
                 >
-                  {icon} <span style={{ marginLeft: "4px" }}>{text}</span>
-                </Button>
+                  <Button
+                    to={path}
+                    sx={{
+                      color: scrolled ? "text.secondary" : "text.primary",
+                      textTransform: "none",
+                      fontFamily: "Montserrat",
+                      fontWeight: 500,
+                      fontSize: "1.1rem",
+                      p: 2,
+                      "&:hover": {
+                        color: "rgb(234, 83, 111)",
+                      },
+                    }}
+                  >
+                    {icon} <span style={{ marginLeft: "4px" }}>{text}</span>
+                  </Button>
+                </HashLink>
               );
             })}
             <Button

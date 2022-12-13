@@ -1,20 +1,19 @@
 import { useCallback, useMemo, useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Box } from "@mui/material";
 import "./App.scss";
 
-import ScrollToTop from "./utils/ScrollToTop";
-import Navigation from "./components/Navigation/Navigation";
-import Footer from "./components/Footer/Footer";
-import Homepage from "./components/Homepage";
-
 import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material";
+import { Box } from "@mui/material";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
 import ColorModeContext from "./utils/ColorModeContext";
 import particlesDark from "./utils/particles/darkMode.json";
 import particlesLight from "./utils/particles/lightMode.json";
+
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
+import Homepage from "./components/Homepage";
 
 function App() {
   const particlesInit = useCallback((main) => {
@@ -113,12 +112,10 @@ function App() {
           />
 
           <Box sx={{ pt: "76.609px", pb: "51px", position: "relative" }}>
-            <ScrollToTop>
-              <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="*" element={<Navigate to="/" />} />
-              </Routes>
-            </ScrollToTop>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
           </Box>
           <Footer />
         </Box>

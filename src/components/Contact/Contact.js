@@ -66,14 +66,6 @@ const Contact = () => {
       </Typography>
 
       <Grid container spacing={3} sx={{ justifyContent: "center" }}>
-        <Grid item sm={7} md={5} xl={6} sx={{ textAlign: "center" }}>
-          <Box
-            component="img"
-            sx={{ width: "75%", borderRadius: "50%", mb: { xs: 4, sm: 0 } }}
-            src={selfie}
-            alt="selfie"
-          />
-        </Grid>
         <Grid item sm={10} md={7} xl={6}>
           <Box sx={{ mb: 5 }}>
             <Typography variant="p" color="text.primary">
