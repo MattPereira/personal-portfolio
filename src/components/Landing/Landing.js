@@ -3,33 +3,39 @@ import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 
 import AnimatedLetters from "../../utils/AnimatedLetters";
-import { Box, Typography, SvgIcon, Grid, Button } from "@mui/material";
-import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_circle.svg";
+import { Box, Typography, Grid, Container, IconButton } from "@mui/material";
+import selfie from "../../assets/images/selfie.jpg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+// import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_circle.svg";
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  borderColor: theme.palette.text.primary,
-  px: 3,
-  py: 1,
-  borderRadius: "10px",
-  fontSize: "1.25rem",
-  fontFamily: "Montserrat",
-  textTransform: "none",
-  border: "2px solid",
-  "&:hover": {
-    backgroundColor: theme.palette.text.primary,
-    color: theme.palette.text.secondary,
-    border: "2px solid",
-  },
+const StyledIconButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: "#EA526F",
+  color: "white",
+  padding: "1rem",
 }));
+
+const socials = [
+  {
+    url: "https://github.com/MattPereira",
+    icon: <GitHubIcon fontSize="large" />,
+  },
+  {
+    url: "https://www.linkedin.com/in/-matt-pereira-/",
+    icon: <LinkedInIcon fontSize="large" />,
+  },
+  {
+    url: "https://twitter.com/__MattPereira__",
+    icon: <TwitterIcon fontSize="large" />,
+  },
+];
 
 const Landing = () => {
   const theme = useTheme();
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = " Matt  Pereira".split("");
+  const nameArray = "Matt  Pereira".split("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,65 +47,73 @@ const Landing = () => {
     <section id="landing">
       <Box
         sx={{
-          height: "100vh",
+          py: 40,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
         }}
       >
-        <Box
-          sx={{
-            fontSize: { xs: "325px", sm: "375px", md: "450px", lg: "550px" },
-            display: "flex",
-            mb: 5,
-          }}
-        >
-          <SvgIcon
-            fontSize="inherit"
-            sx={{ color: theme.palette.background.paper }}
-          >
-            <MPLogo />
-          </SvgIcon>
-        </Box>
+        <Container>
+          <Grid container alignItems="center" justifyContent="center">
+            <Grid item md={6} sx={{ textAlign: "center" }}>
+              <Box
+                component="img"
+                src={selfie}
+                alt="selfie"
+                sx={{
+                  width: "75%",
+                  borderRadius: "50%",
+                  border: "20px solid white",
+                  mb: { xs: 3, lg: 0 },
+                }}
+              />
+            </Grid>
+            <Grid item md={6} sx={{ color: theme.palette.background.paper }}>
+              <Box sx={{ mb: 2 }}>
+                <Typography
+                  variant="h1"
+                  sx={{
+                    mb: 1,
+                    fontFamily: "Cubano",
+                    letterSpacing: "2px",
 
-        <Typography
-          variant="h1"
-          sx={{
-            mb: 1,
-            fontFamily: "Fredoka One",
-            color: theme.palette.background.paper,
-            letterSpacing: "0.4rem",
-            fontSize: { xs: "2.5rem", sm: "4rem", md: "5rem", lg: "6rem" },
-          }}
-        >
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={nameArray}
-            idx={11}
-          />
-        </Typography>
-        <Grid container sx={{ py: 3 }} spacing={1} justifyContent="center">
-          <Grid item>
-            <StyledButton
-              href="https://www.linkedin.com/in/-matt-pereira-/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitHubIcon fontSize="large" /> &nbsp; GitHub
-            </StyledButton>
+                    fontSize: {
+                      xs: "3rem",
+                      sm: "3.5rem",
+                      md: "3.5rem",
+                      lg: "5rem",
+                    },
+                  }}
+                >
+                  <AnimatedLetters
+                    letterClass={letterClass}
+                    strArray={nameArray}
+                    idx={11}
+                  />
+                </Typography>
+              </Box>
+              <Box sx={{ mb: 2 }}>
+                <Typography variant="h3">Full Stack Developer</Typography>
+              </Box>
+              <Box>
+                <Grid container spacing={1}>
+                  {socials.map((social) => (
+                    <Grid item key={social.url}>
+                      <StyledIconButton
+                        href={social.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="contained"
+                      >
+                        {social.icon}
+                      </StyledIconButton>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item>
-            <StyledButton
-              href="https://www.linkedin.com/in/-matt-pereira-/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Linked&nbsp;
-              <LinkedInIcon fontSize="large" />
-            </StyledButton>
-          </Grid>
-        </Grid>
+        </Container>
       </Box>
     </section>
   );

@@ -3,14 +3,14 @@ import { HashLink } from "react-router-hash-link";
 
 import { useTheme } from "@mui/material/styles";
 
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import WorkIcon from "@mui/icons-material/Work";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import PersonIcon from "@mui/icons-material/Person";
+import ArticleIcon from "@mui/icons-material/Article";
+import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
+import StarIcon from "@mui/icons-material/Star";
 
 import {
   AppBar,
@@ -36,27 +36,27 @@ import ModeSwitch from "./ModeSwitch";
 const navItems = [
   {
     text: "About",
-    icon: <PersonOutlineOutlinedIcon />,
+    icon: <PersonIcon />,
     path: "#about",
   },
   {
     text: "Skills",
-    icon: <StarOutlineOutlinedIcon />,
+    icon: <StarIcon />,
     path: "#skills",
   },
   {
     text: "Projects",
-    icon: <LightbulbOutlinedIcon />,
+    icon: <LightbulbIcon />,
     path: "#projects",
   },
   {
     text: "Experience",
-    icon: <WorkOutlineIcon />,
+    icon: <WorkIcon />,
     path: "#experience",
   },
   {
     text: "Contact",
-    icon: <MailOutlinedIcon />,
+    icon: <MailIcon />,
     path: "#contact",
   },
 ];
@@ -104,33 +104,51 @@ const Navigation = (props) => {
         </Grid>
       </Grid>
       <Divider />
-      <List>
-        {navItems.map((item) => {
-          const { text, icon, path } = item;
-          return (
-            <ListItem key={text} disablePadding>
-              <HashLink smooth to={path}>
-                <ListItemButton
-                  to={path}
-                  sx={{ justifyContent: "center", fontSize: "1.3rem" }}
-                >
-                  <ListItemIcon
-                    sx={{ justifyContent: "center", color: "text.secondary" }}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <List>
+          {navItems.map((item) => {
+            const { text, icon, path } = item;
+            return (
+              <ListItem key={text} disablePadding>
+                <HashLink smooth to={path} style={{ textDecoration: "none" }}>
+                  <ListItemButton
+                    sx={{ justifyContent: "center", fontSize: "1.3rem" }}
                   >
-                    {icon}
-                  </ListItemIcon>
-                  <Typography
-                    sx={{ color: "text.secondary" }}
-                    fontSize="inherit"
-                  >
-                    {text}
-                  </Typography>
-                </ListItemButton>
-              </HashLink>
-            </ListItem>
-          );
-        })}
-      </List>
+                    <ListItemIcon
+                      sx={{ justifyContent: "center", color: "text.secondary" }}
+                    >
+                      {icon}
+                    </ListItemIcon>
+                    <Typography
+                      sx={{ color: "text.secondary" }}
+                      fontSize="inherit"
+                    >
+                      {text}
+                    </Typography>
+                  </ListItemButton>
+                </HashLink>
+              </ListItem>
+            );
+          })}
+          <ListItem disablePadding>
+            <ListItemButton
+              component={Link}
+              sx={{ fontSize: "1.3rem" }}
+              href="https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"
+              target="_blank"
+            >
+              <ListItemIcon
+                sx={{ justifyContent: "center", color: "text.secondary" }}
+              >
+                <ArticleIcon />
+              </ListItemIcon>
+              <Typography sx={{ color: "text.secondary" }} fontSize="inherit">
+                Resume
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Box>
     </Box>
   );
 
@@ -185,7 +203,6 @@ const Navigation = (props) => {
                   style={{ textDecoration: "none" }}
                 >
                   <Button
-                    to={path}
                     sx={{
                       color: scrolled ? "text.secondary" : "text.primary",
                       textTransform: "none",
@@ -219,8 +236,7 @@ const Navigation = (props) => {
                 },
               }}
             >
-              <ArticleOutlinedIcon />{" "}
-              <span style={{ marginLeft: "4px" }}>Resume</span>
+              <ArticleIcon /> <span style={{ marginLeft: "4px" }}>Resume</span>
             </Button>
           </Box>
           <ModeSwitch />

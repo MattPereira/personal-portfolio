@@ -35,20 +35,16 @@ function App() {
       createTheme({
         typography: {
           h2: {
-            fontFamily: "Fredoka One",
-            fontSize: "4rem",
-            fontWeight: 500,
-            paddingBottom: "3rem",
+            fontFamily: "Cubano",
             textAlign: "center",
           },
           h3: {
-            fontFamily: "Poppins",
-            fontWeight: 500,
+            fontFamily: "Lato",
+            fontWeight: 600,
           },
           p: {
-            fontSize: "1.1rem",
-            fontFamily: "Poppins",
-            fontWeight: 400,
+            fontSize: "20px",
+            fontFamily: "Didact Gothic",
           },
         },
         components: {

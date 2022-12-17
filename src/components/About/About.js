@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Grid, Typography, Container, Box } from "@mui/material";
-import selfie from "../../assets/images/selfie.jpg";
+import { Grid, Typography, Container } from "@mui/material";
 import AnimatedLetters from "../../utils/AnimatedLetters";
 
 const About = () => {
@@ -30,14 +29,6 @@ const About = () => {
       </Typography>
 
       <Grid container>
-        <Grid item lg={6} sx={{ textAlign: "center" }}>
-          <Box
-            component="img"
-            src={selfie}
-            alt="selfie"
-            sx={{ width: "75%", borderRadius: "50%" }}
-          />
-        </Grid>
         <Grid item lg={6} sx={{ display: "flex", alignItems: "center" }}>
           <Typography variant="p" color="text.primary">
             I am a full stack web developer looking for opportunities to

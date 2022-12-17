@@ -54,7 +54,7 @@ const Experience = () => {
       </Typography>
       <Grid container spacing={3}>
         {experiences.map((experience, id) => (
-          <Grid item xs={12} sm={6} md={6} lg={4}>
+          <Grid item xs={12} sm={6} md={6} lg={4} key={id}>
             <Paper
               sx={{
                 borderRadius: "30px",

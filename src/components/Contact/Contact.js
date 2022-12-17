@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import AnimatedLetters from "../../utils/AnimatedLetters";
-import selfie from "../../assets/images/selfie.jpg";
+import { ReactComponent as MPLogo } from "../../assets/svg/logos/mp_circle.svg";
 
 import {
   Typography,
@@ -12,9 +12,14 @@ import {
   Alert,
   TextField,
   Button,
+  SvgIcon,
 } from "@mui/material";
 
+import { useTheme } from "@mui/material/styles";
+
 const Contact = () => {
+  const theme = useTheme();
+
   const [letterClass, setLetterClass] = useState("text-animate");
   const form = useRef();
 
@@ -66,7 +71,29 @@ const Contact = () => {
       </Typography>
 
       <Grid container spacing={3} sx={{ justifyContent: "center" }}>
-        <Grid item sm={10} md={7} xl={6}>
+        <Grid item md={6} order={{ xs: 2, md: 1 }}>
+          <Box
+            sx={{
+              fontSize: { xs: "250px", sm: "300px", md: "350px", lg: "400px" },
+              display: "flex",
+              mb: 5,
+            }}
+          >
+            <SvgIcon
+              fontSize="inherit"
+              sx={{ color: theme.palette.background.paper }}
+            >
+              <MPLogo />
+            </SvgIcon>
+          </Box>
+        </Grid>
+
+        <Grid
+          item
+          md={6}
+          order={{ xs: 1, md: 2 }}
+          sx={{ mb: { xs: 5, md: 0 } }}
+        >
           <Box sx={{ mb: 5 }}>
             <Typography variant="p" color="text.primary">
               I am interested in both freelance and employment opportunities.
