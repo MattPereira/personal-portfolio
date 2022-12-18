@@ -19,13 +19,11 @@ const Projects = () => {
       <Container sx={{ py: 5 }}>
         <Box sx={{ mb: 3 }}>
           <Typography variant="h2" color="text.primary">
-            <span className="pink">
-              <AnimatedLetters
-                letterClass={letterClass}
-                strArray={"Projects".split("")}
-                idx={10}
-              />
-            </span>
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={"Projects".split("")}
+              idx={10}
+            />
           </Typography>
         </Box>
 

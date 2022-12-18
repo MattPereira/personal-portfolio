@@ -1,35 +1,38 @@
 import { useEffect, useState } from "react";
-
 import AnimatedLetters from "../../utils/AnimatedLetters";
 
 import { Typography, Container, Box, Grid, Paper } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+
 import codeForSf from "../../assets/images/code_for_sf.png";
 import hackForLa from "../../assets/images/hack_for_la.png";
 import springboard from "../../assets/images/springboard.png";
 
+const experiences = [
+  {
+    title: "Web Developer",
+    image: codeForSf,
+    description:
+      "Code for San Francisco is a volunteer organization that works with local government to improve the lives of San Franciscans through technology.",
+  },
+  {
+    title: "Software Engineer",
+    image: hackForLa,
+    description:
+      "Hack for LA is a volunteer organization that works with local government to improve the lives of Los Angeles residents through technology. ",
+  },
+  {
+    title: "Peer Mentor",
+    image: springboard,
+    description:
+      "Springboard is a full-stack software engineering bootcamp. After earning my certification, I started volunteering as a peer mentor.",
+  },
+];
+
 export default function Experience() {
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const experiences = [
-    {
-      title: "Web Developer",
-      image: codeForSf,
-      description:
-        "Code for San Francisco is a volunteer organization that works with local government to improve the lives of San Franciscans through technology.",
-    },
-    {
-      title: "Software Engineer",
-      image: hackForLa,
-      description:
-        "Hack for LA is a volunteer organization that works with local government to improve the lives of Los Angeles residents through technology. ",
-    },
-    {
-      title: "Peer Mentor",
-      image: springboard,
-      description:
-        "Springboard is a full-stack software engineering bootcamp. After earning my certification, I started volunteering as a peer mentor.",
-    },
-  ];
+  const theme = useTheme();
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,22 +43,21 @@ export default function Experience() {
     <Container sx={{ py: 5 }} id="experience">
       <Box sx={{ mb: 3 }}>
         <Typography variant="h2" color="text.primary">
-          <span className="pink">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={"Experience".split("")}
-              idx={10}
-            />
-          </span>
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={"Experience".split("")}
+            idx={10}
+          />
         </Typography>
       </Box>
       <Grid container spacing={3}>
         {experiences.map((experience, id) => (
           <Grid item xs={12} sm={6} md={6} lg={4} key={id}>
             <Paper
+              elevation={0}
               sx={{
                 borderRadius: "30px",
-                backgroundColor: "grey.800",
+                backgroundColor: theme.palette.background.paper,
                 height: "100%",
               }}
             >

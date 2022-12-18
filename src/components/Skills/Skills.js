@@ -4,10 +4,13 @@ import AnimatedLetters from "../../utils/AnimatedLetters";
 import { skillsImage } from "../../utils/skillsImages";
 
 import { Typography, Container, Grid, Box, Paper } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import "./Skills.scss";
 
 const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
+
+  const theme = useTheme();
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,71 +33,71 @@ const Skills = () => {
 
   return (
     <Container sx={{ mt: 5 }} id="skills">
-      <Box sx={{ mb: 5 }}>
+      <Box sx={{ mb: 1 }}>
         <Typography variant="h2" color="text.primary">
-          <span className="pink">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={"Skills".split("")}
-              idx={10}
-            />
-          </span>
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={"Skills".split("")}
+            idx={10}
+          />
         </Typography>
       </Box>
 
       {categories.map((category, id) => (
-        <Paper
-          elevation={0}
-          sx={{
-            mb: 5,
-            backgroundColor: "grey.800",
-            px: 5,
-            py: 2,
-            borderRadius: "30px",
-          }}
-          key={id}
-        >
-          <Box sx={{ mb: 3 }}>
+        <Box key={category.name}>
+          <Box sx={{ mb: 1, ml: 4 }}>
             <Typography variant="h3" color="text.primary">
               {category.name}
             </Typography>
           </Box>
-          <Grid container spacing={5}>
-            {Object.values(category.skills).map((skill, id) => (
-              <Grid
-                item
-                xs={4}
-                sm={3}
-                md={2}
-                lg={2}
-                key={id}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}
-              >
-                <Box
-                  component="img"
-                  src={skillsImage(skill)}
-                  alt={skill}
-                  sx={{ width: "100%", maxHeight: "150px", mb: 1 }}
-                />
-
-                <Typography
-                  variant="p"
-                  align="center"
+          <Paper
+            elevation={0}
+            sx={{
+              mb: 5,
+              backgroundColor: theme.palette.background.paper,
+              p: 3,
+              borderRadius: "30px",
+            }}
+            key={id}
+          >
+            <Grid container spacing={5}>
+              {Object.values(category.skills).map((skill, id) => (
+                <Grid
+                  item
+                  xs={4}
+                  sm={3}
+                  md={2}
+                  lg={2}
+                  key={id}
                   sx={{
-                    color: "text.primary",
-                    // marginTop: "auto",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
                   }}
                 >
-                  {skill}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Paper>
+                  <Box sx={{ textAlign: "center" }}>
+                    <Box
+                      component="img"
+                      src={skillsImage(skill)}
+                      alt={skill}
+                      sx={{ width: "75%", maxHeight: "150px", mb: 1 }}
+                    />
+                  </Box>
+
+                  <Typography
+                    variant="p"
+                    align="center"
+                    sx={{
+                      color: "text.primary",
+                    }}
+                  >
+                    {skill}
+                  </Typography>
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
+        </Box>
       ))}
     </Container>
   );

@@ -75,13 +75,13 @@ function App() {
             ? {
                 background: {
                   default: "#fff",
-                  paper: "#323232",
+                  paper: "grey.400",
                 },
               }
             : {
                 background: {
                   default: "#323232",
-                  paper: "#fff",
+                  paper: "grey.800",
                 },
               }),
         },
@@ -90,6 +90,8 @@ function App() {
   );
 
   theme = responsiveFontSizes(theme);
+
+  console.log(theme);
 
   return (
     <ColorModeContext.Provider value={colorMode}>

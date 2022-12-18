@@ -115,12 +115,12 @@ const Navigation = (props) => {
                     sx={{ justifyContent: "center", fontSize: "1.3rem" }}
                   >
                     <ListItemIcon
-                      sx={{ justifyContent: "center", color: "text.secondary" }}
+                      sx={{ justifyContent: "center", color: "text.primary" }}
                     >
                       {icon}
                     </ListItemIcon>
                     <Typography
-                      sx={{ color: "text.secondary" }}
+                      sx={{ color: "text.primary" }}
                       fontSize="inherit"
                     >
                       {text}
@@ -138,11 +138,11 @@ const Navigation = (props) => {
               target="_blank"
             >
               <ListItemIcon
-                sx={{ justifyContent: "center", color: "text.secondary" }}
+                sx={{ justifyContent: "center", color: "text.primary" }}
               >
                 <ArticleIcon />
               </ListItemIcon>
-              <Typography sx={{ color: "text.secondary" }} fontSize="inherit">
+              <Typography sx={{ color: "text.primary" }} fontSize="inherit">
                 Resume
               </Typography>
             </ListItemButton>
@@ -171,16 +171,7 @@ const Navigation = (props) => {
             <Box sx={{ width: "62px" }}>
               <SvgIcon
                 sx={{
-                  color:
-                    theme.palette.mode === "light"
-                      ? scrolled
-                        ? theme.palette.text.secondary
-                        : theme.palette.text.primary
-                      : theme.palette.mode === "dark"
-                      ? scrolled
-                        ? theme.palette.text.secondary
-                        : theme.palette.text.primary
-                      : "white",
+                  color: "text.primary",
                 }}
                 fontSize="large"
               >
@@ -204,7 +195,7 @@ const Navigation = (props) => {
                 >
                   <Button
                     sx={{
-                      color: scrolled ? "text.secondary" : "text.primary",
+                      color: "text.primary",
                       textTransform: "none",
                       fontFamily: "Montserrat",
                       fontWeight: 500,
@@ -225,7 +216,7 @@ const Navigation = (props) => {
               href="https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"
               target="_blank"
               sx={{
-                color: scrolled ? "text.secondary" : "text.primary",
+                color: "text.primary",
                 textTransform: "none",
                 fontFamily: "Montserrat",
                 fontWeight: 500,

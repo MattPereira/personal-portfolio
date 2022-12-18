@@ -3,14 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 
 import AnimatedLetters from "../../utils/AnimatedLetters";
-import {
-  Box,
-  Typography,
-  Grid,
-  Container,
-  IconButton,
-  Paper,
-} from "@mui/material";
+import { Box, Typography, Grid, Container, IconButton } from "@mui/material";
 import selfie from "../../assets/images/selfie.jpg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -62,29 +55,65 @@ const Landing = () => {
       >
         <Container>
           <Grid container alignItems="center" justifyContent="center">
-            <Grid item md={6} sx={{ textAlign: "center" }}>
+            <Grid
+              item
+              md={6}
+              lg={5}
+              sx={{
+                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Box
-                component="img"
-                src={selfie}
-                alt="selfie"
                 sx={{
-                  width: "75%",
-                  borderRadius: "50%",
-                  mb: { xs: 3, lg: 0 },
+                  width: { xs: "350px", lg: "400px" },
+                  height: { xs: "350px", lg: "400px" },
+                  backgroundColor: theme.palette.background.paper,
+                  borderRadius: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  mb: { xs: 3, md: 0 },
                 }}
-              />
+              >
+                {" "}
+                <Box
+                  component="img"
+                  src={selfie}
+                  alt="selfie"
+                  sx={{
+                    width: { xs: "300px", lg: "350px" },
+                    height: { xs: "300px", lg: "350px" },
+                    borderRadius: "50%",
+                    position: "relative",
+                  }}
+                />
+              </Box>
             </Grid>
-            <Grid item md={6} sx={{ color: theme.palette.background.paper }}>
-              <Box sx={{ mb: 2 }}>
+            <Grid
+              item
+              md={6}
+              lg={7}
+              sx={{ color: theme.palette.background.paper }}
+            >
+              <Box
+                sx={{
+                  backgroundColor: theme.palette.background.paper,
+                  borderRadius: "10px",
+                  textAlign: "center",
+                }}
+              >
                 <Typography
                   variant="h1"
                   sx={{
                     mb: 1,
                     fontFamily: "Cubano",
-                    letterSpacing: "2px",
+                    letterSpacing: "3px",
+                    color: "text.primary",
 
                     fontSize: {
-                      xs: "3rem",
+                      xs: "2.5rem",
                       sm: "3.5rem",
                       md: "3.5rem",
                       lg: "5rem",
@@ -99,10 +128,16 @@ const Landing = () => {
                 </Typography>
               </Box>
               <Box sx={{ mb: 2 }}>
-                <Typography variant="h3">Full Stack Developer</Typography>
+                <Typography variant="h3" sx={{ color: "text.primary" }}>
+                  Full Stack Developer
+                </Typography>
               </Box>
               <Box>
-                <Grid container spacing={1}>
+                <Grid
+                  container
+                  spacing={1}
+                  sx={{ justifyContent: { xs: "center", md: "start" } }}
+                >
                   {socials.map((social) => (
                     <Grid item key={social.url}>
                       <StyledIconButton

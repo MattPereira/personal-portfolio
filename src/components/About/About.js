@@ -15,13 +15,11 @@ const About = () => {
     <Container sx={{ py: 5 }} id="about">
       <Box sx={{ mb: 3 }}>
         <Typography variant="h2" color="text.primary">
-          <span className="pink">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={"About".split("")}
-              idx={10}
-            />
-          </span>
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={"About".split("")}
+            idx={10}
+          />
         </Typography>
       </Box>
 
