@@ -34,13 +34,19 @@ function App() {
     () =>
       createTheme({
         typography: {
+          h1: {
+            fontFamily: "Cubano",
+          },
           h2: {
             fontFamily: "Cubano",
             textAlign: "center",
+            fontSize: "5rem",
           },
           h3: {
-            fontFamily: "Lato",
-            fontWeight: 600,
+            fontFamily: "Cubano",
+          },
+          h4: {
+            fontFamily: "Cubano",
           },
           p: {
             fontSize: "20px",
@@ -85,7 +91,6 @@ function App() {
 
   theme = responsiveFontSizes(theme);
 
-  console.log(theme);
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>

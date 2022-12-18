@@ -3,7 +3,14 @@ import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 
 import AnimatedLetters from "../../utils/AnimatedLetters";
-import { Box, Typography, Grid, Container, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Container,
+  IconButton,
+  Paper,
+} from "@mui/material";
 import selfie from "../../assets/images/selfie.jpg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -47,7 +54,7 @@ const Landing = () => {
     <section id="landing">
       <Box
         sx={{
-          py: 40,
+          py: { xs: 20, sm: 30, lg: 40 },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -63,7 +70,6 @@ const Landing = () => {
                 sx={{
                   width: "75%",
                   borderRadius: "50%",
-                  border: "20px solid white",
                   mb: { xs: 3, lg: 0 },
                 }}
               />

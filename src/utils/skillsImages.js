@@ -58,6 +58,7 @@ import flask from "../assets/svg/skills/flask.svg";
 import express from "../assets/svg/skills/express.svg";
 import ubuntu from "../assets/svg/skills/ubuntu.svg";
 import github from "../assets/svg/skills/github.svg";
+import nodejs from "../assets/svg/skills/nodejs.png";
 
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
@@ -174,6 +175,8 @@ export const skillsImage = (skill) => {
       return ubuntu;
     case "github":
       return github;
+    case "nodejs":
+      return nodejs;
     default:
       break;
   }

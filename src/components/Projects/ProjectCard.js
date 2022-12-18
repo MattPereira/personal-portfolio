@@ -1,15 +1,37 @@
-import { Link as RRLink } from "react-router-dom";
-import { Grid, Typography, Paper, Box, Link } from "@mui/material";
+import { Grid, Typography, Paper, Box, Link, Button } from "@mui/material";
+
+import { styled } from "@mui/material/styles";
+
+import CodeIcon from "@mui/icons-material/Code";
+import LanguageIcon from "@mui/icons-material/Language";
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  backgroundColor: "#EA526F",
+  color: "white",
+  padding: "1rem",
+  borderRadius: "30px",
+  width: "100%",
+  "&:hover": {
+    backgroundColor: "#EA526F",
+    color: "white",
+  },
+}));
 
 const ProjectCard = ({
   project: { title, logo, links, description, languages, technologies },
 }) => {
-  console.log(title);
   return (
-    <Grid item xs={12}>
-      <Paper sx={{ mb: 5, borderRadius: "30px", backgroundColor: "white" }}>
+    <Grid item xs={12} lg={6}>
+      <Paper
+        sx={{
+          mb: 5,
+          borderRadius: "30px",
+          backgroundColor: "#424242",
+          height: "100%",
+        }}
+      >
         <Grid container>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12}>
             <Box
               sx={{
                 backgroundColor: "black",
@@ -25,37 +47,37 @@ const ProjectCard = ({
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12}>
             <Box sx={{ p: 3 }}>
-              <Box sx={{ mb: { xs: 3, md: 0 } }}>
-                <Typography variant="p" sx={{ color: "rgb(50,50,50)" }}>
+              <Grid container spacing={2} sx={{ mb: 3 }}>
+                <Grid item xs={6}>
+                  <StyledButton
+                    component={Link}
+                    href={links.github}
+                    variant="contained"
+                  >
+                    <CodeIcon /> Code
+                  </StyledButton>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledButton
+                    href={links.github}
+                    component={Link}
+                    variant="contained"
+                  >
+                    <LanguageIcon /> Site
+                  </StyledButton>
+                </Grid>
+              </Grid>
+              {/* <Box sx={{ mb: { xs: 3, md: 0 } }}>
+                <Typography variant="p" sx={{ color: "text.primary" }}>
                   {description}
                 </Typography>
-              </Box>
-              <Box sx={{ color: "rgb(50,50,50)" }}>
+              </Box> */}
+
+              <Box>
                 <Typography variant="p">
-                  <strong>
-                    Links:{" "}
-                    <Link href={links.github} color="text.highlight">
-                      GitHub
-                    </Link>
-                    ,{" "}
-                    <Link href={links.github} color="text.highlight">
-                      Site
-                    </Link>
-                  </strong>
-                </Typography>
-              </Box>
-              <Box sx={{ color: "rgb(50,50,50)" }}>
-                <Typography variant="p">
-                  <strong>Languages: </strong>
-                  {languages}
-                </Typography>
-              </Box>
-              <Box sx={{ color: "rgb(50,50,50)" }}>
-                <Typography variant="p">
-                  <strong>Technologies: </strong>
-                  {technologies}
+                  {languages}, {technologies}
                 </Typography>
               </Box>
             </Box>

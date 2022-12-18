@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Grid,
-  Popover,
-  Typography,
-  IconButton,
-} from "@mui/material";
+import { Box, Container, Grid, Popover, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
@@ -28,7 +21,7 @@ function Footer() {
   return (
     <footer>
       <Box
-        bgcolor="text.primary"
+        bgcolor="#424242"
         sx={{ bottom: 0, position: "absolute", width: "100%", py: 1 }}
       >
         <Container>
@@ -39,7 +32,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitHubIcon fontSize="large" sx={{ color: "text.secondary" }} />
+                <GitHubIcon fontSize="large" sx={{ color: "white" }} />
               </a>
             </Grid>
             <Grid item>
@@ -48,17 +41,14 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkedInIcon
-                  fontSize="large"
-                  sx={{ color: "text.secondary" }}
-                />
+                <LinkedInIcon fontSize="large" sx={{ color: "white" }} />
               </a>
             </Grid>
             <Grid item>
               <MailIcon
                 onClick={handleClick}
                 fontSize="large"
-                sx={{ color: "text.secondary", cursor: "pointer" }}
+                sx={{ cursor: "pointer", color: "white" }}
               />
 
               <Popover

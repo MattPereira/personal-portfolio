@@ -7,7 +7,7 @@ import codeForSf from "../../assets/images/code_for_sf.png";
 import hackForLa from "../../assets/images/hack_for_la.png";
 import springboard from "../../assets/images/springboard.png";
 
-const Experience = () => {
+export default function Experience() {
   const [letterClass, setLetterClass] = useState("text-animate");
 
   const experiences = [
@@ -38,20 +38,17 @@ const Experience = () => {
   }, []);
   return (
     <Container sx={{ py: 5 }} id="experience">
-      <Typography variant="h2" color="text.primary">
-        <AnimatedLetters
-          letterClass={letterClass}
-          strArray={"My ".split("")}
-          idx={10}
-        />
-        <span className="pink">
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={"Experience".split("")}
-            idx={13}
-          />
-        </span>
-      </Typography>
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="h2" color="text.primary">
+          <span className="pink">
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={"Experience".split("")}
+              idx={10}
+            />
+          </span>
+        </Typography>
+      </Box>
       <Grid container spacing={3}>
         {experiences.map((experience, id) => (
           <Grid item xs={12} sm={6} md={6} lg={4} key={id}>
@@ -59,7 +56,7 @@ const Experience = () => {
               sx={{
                 borderRadius: "30px",
                 backgroundColor: "grey.800",
-                height: "400px",
+                height: "100%",
               }}
             >
               <Box
@@ -80,10 +77,13 @@ const Experience = () => {
                 />
               </Box>
 
-              <Box sx={{ p: 2 }}>
-                <Typography variant="h4" color="text.primary">
-                  {experience.title}
-                </Typography>
+              <Box sx={{ p: 3 }}>
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="h4" color="text.primary">
+                    {experience.title}
+                  </Typography>
+                </Box>
+
                 <Typography variant="body1" color="text.primary">
                   {experience.description}
                 </Typography>
@@ -94,6 +94,4 @@ const Experience = () => {
       </Grid>
     </Container>
   );
-};
-
-export default Experience;
+}

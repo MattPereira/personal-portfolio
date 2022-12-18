@@ -54,21 +54,18 @@ const Contact = () => {
   };
 
   return (
-    <Container sx={{ py: 5 }} id="contact">
-      <Typography variant="h2" color="text.primary">
-        <span className="pink">
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={"Contact".split("")}
-            idx={10}
-          />
-        </span>
-        <AnimatedLetters
-          letterClass={letterClass}
-          strArray={" Me!".split("")}
-          idx={17}
-        />
-      </Typography>
+    <Container sx={{ pt: 5, pb: 10 }} id="contact">
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="h2" color="text.primary">
+          <span className="pink">
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={"Contact".split("")}
+              idx={10}
+            />
+          </span>
+        </Typography>
+      </Box>
 
       <Grid container spacing={3} sx={{ justifyContent: "center" }}>
         <Grid item md={6} order={{ xs: 2, md: 1 }}>
@@ -76,6 +73,7 @@ const Contact = () => {
             sx={{
               fontSize: { xs: "250px", sm: "300px", md: "350px", lg: "400px" },
               display: "flex",
+              justifyContent: "center",
               mb: 5,
             }}
           >
@@ -96,9 +94,9 @@ const Contact = () => {
         >
           <Box sx={{ mb: 5 }}>
             <Typography variant="p" color="text.primary">
-              I am interested in both freelance and employment opportunities.
-              Prospective clients are welcome to message me using the form
-              below!
+              Prospective clients are welcome to send me a message using the
+              form below. I am interested in both freelance and employment
+              opportunities!
             </Typography>
             {status === true ? (
               <Alert severity="success">
