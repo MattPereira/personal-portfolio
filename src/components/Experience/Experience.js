@@ -41,7 +41,7 @@ export default function Experience() {
   }, []);
   return (
     <Container sx={{ py: 5 }} id="experience">
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 5 }}>
         <Typography variant="h2" color="text.primary">
           <AnimatedLetters
             letterClass={letterClass}

@@ -17,7 +17,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <Container sx={{ py: 5 }}>
-        <Box sx={{ mb: 3 }}>
+        <Box sx={{ mb: 5 }}>
           <Typography variant="h2" color="text.primary">
             <AnimatedLetters
               letterClass={letterClass}

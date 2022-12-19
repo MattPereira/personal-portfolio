@@ -55,8 +55,8 @@ const Contact = () => {
   };
 
   return (
-    <Container sx={{ pt: 5, pb: 10 }} id="contact">
-      <Box sx={{ mb: 3 }}>
+    <Container sx={{ pt: 10, pb: { xs: 10, lg: 15 } }} id="contact">
+      <Box sx={{ mb: 5 }}>
         <Typography variant="h2" color="text.primary">
           <AnimatedLetters
             letterClass={letterClass}
@@ -67,10 +67,10 @@ const Contact = () => {
       </Box>
 
       <Grid container spacing={3} sx={{ justifyContent: "center" }}>
-        <Grid item xs={12} lg={6} order={{ xs: 2, lg: 1 }}>
+        {/* <Grid item xs={12} lg={4} order={{ xs: 2, lg: 1 }}>
           <Box
             sx={{
-              fontSize: { xs: "250px", sm: "300px", md: "350px", lg: "400px" },
+              fontSize: { xs: "250px", sm: "300px", md: "350px", lg: "350px" },
               display: "flex",
               justifyContent: "center",
               mb: 5,
@@ -80,12 +80,12 @@ const Contact = () => {
               <MPLogo />
             </SvgIcon>
           </Box>
-        </Grid>
+        </Grid> */}
 
         <Grid
           item
           xs={12}
-          lg={6}
+          lg={10}
           order={{ xs: 1, lg: 2 }}
           sx={{ mb: { xs: 5, md: 0 } }}
         >
@@ -100,7 +100,7 @@ const Contact = () => {
             <Box>
               <Box sx={{ mb: 2 }}>
                 <Typography variant="h4" align="center">
-                  Send A Message
+                  Send Message
                 </Typography>
               </Box>
               {status === true ? (
@@ -185,7 +185,7 @@ const Contact = () => {
                   sx={{
                     backgroundColor: "#EA526F",
                     color: "white",
-                    padding: "0.5rem 1rem",
+                    padding: "1rem",
                     borderRadius: "15px",
                     width: "100%",
                   }}

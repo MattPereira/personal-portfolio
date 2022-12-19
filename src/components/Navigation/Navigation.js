@@ -84,7 +84,7 @@ const Navigation = (props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle}>
+    <Box onClick={handleDrawerToggle} sx={{ backgroundColor: "text.primary" }}>
       <Grid
         container
         alignItems="center"
@@ -94,16 +94,22 @@ const Navigation = (props) => {
         <Grid item>
           <SvgIcon
             fontSize="large"
-            sx={{ color: theme.palette.background.default }}
+            sx={{ color: theme.palette.background.default, cursor: "pointer" }}
           >
             <MPLogo />
           </SvgIcon>
         </Grid>
         <Grid item>
-          <CloseIcon fontSize="large" sx={{ color: "text.secondary" }} />
+          <ModeSwitch />
+        </Grid>
+        <Grid item>
+          <CloseIcon
+            fontSize="large"
+            sx={{ color: "text.secondary", cursor: "pointer" }}
+          />
         </Grid>
       </Grid>
-      <Divider />
+      <Divider sx={{ border: `1px solid ${theme.palette.text.secondary}` }} />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <List>
           {navItems.map((item) => {
@@ -115,12 +121,12 @@ const Navigation = (props) => {
                     sx={{ justifyContent: "center", fontSize: "1.3rem" }}
                   >
                     <ListItemIcon
-                      sx={{ justifyContent: "center", color: "text.primary" }}
+                      sx={{ justifyContent: "center", color: "text.secondary" }}
                     >
                       {icon}
                     </ListItemIcon>
                     <Typography
-                      sx={{ color: "text.primary" }}
+                      sx={{ color: "text.secondary" }}
                       fontSize="inherit"
                     >
                       {text}
@@ -160,9 +166,7 @@ const Navigation = (props) => {
       <AppBar
         component="nav"
         sx={{
-          backgroundColor: scrolled
-            ? theme.palette.background.paper
-            : "transparent",
+          backgroundColor: scrolled ? "text.primary" : "transparent",
         }}
         elevation={scrolled ? 8 : 0}
       >
@@ -171,7 +175,7 @@ const Navigation = (props) => {
             <Box sx={{ width: "62px" }}>
               <SvgIcon
                 sx={{
-                  color: "text.primary",
+                  color: scrolled ? "text.secondary" : "text.primary",
                 }}
                 fontSize="large"
               >
@@ -195,7 +199,7 @@ const Navigation = (props) => {
                 >
                   <Button
                     sx={{
-                      color: "text.primary",
+                      color: scrolled ? "text.secondary" : "text.primary",
                       textTransform: "none",
                       fontFamily: "Montserrat",
                       fontWeight: 500,
@@ -216,7 +220,7 @@ const Navigation = (props) => {
               href="https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"
               target="_blank"
               sx={{
-                color: "text.primary",
+                color: scrolled ? "text.secondary" : "text.primary",
                 textTransform: "none",
                 fontFamily: "Montserrat",
                 fontWeight: 500,

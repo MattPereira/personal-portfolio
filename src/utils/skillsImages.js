@@ -55,7 +55,7 @@ import wolframalpha from "../assets/svg/skills/wolframalpha.svg";
 import canva from "../assets/svg/skills/canva.svg";
 
 import flask from "../assets/svg/skills/flask.svg";
-import express from "../assets/svg/skills/express.svg";
+import express from "../assets/svg/skills/express.webp";
 import ubuntu from "../assets/svg/skills/ubuntu.svg";
 import github from "../assets/svg/skills/github.svg";
 import nodejs from "../assets/svg/skills/nodejs.png";
@@ -169,7 +169,7 @@ export const skillsImage = (skill) => {
       return canva;
     case "flask":
       return flask;
-    case "express":
+    case "expressjs":
       return express;
     case "ubuntu":
       return ubuntu;

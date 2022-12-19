@@ -9,6 +9,7 @@ export const projectsData = [
     links: {
       github: "https://github.com/MattPereira/ccgc-backend",
       site: "https://ccgc.surge.sh/",
+      info: "https://github.com/MattPereira/ccgc-backend#readme",
     },
     languages: ["Javascript, HTML, CSS"],
     technologies: ["React, Express, PostgreSQL, Material-UI, Railway, Surge"],
@@ -21,6 +22,7 @@ export const projectsData = [
     links: {
       github: "https://github.com/MattPereira/no-fun-league",
       site: "https://no-fun-league.up.railway.app/",
+      info: "https://github.com/MattPereira/no-fun-league#readme",
     },
     languages: ["Python, HTML, CSS"],
     technologies: ["Flask, PostgreSQL, SQLAlchemy, Jinja, Bootstrap, Railway"],
@@ -33,6 +35,7 @@ export const projectsData = [
     links: {
       github: "https://github.com/MattPereira/tabernacle-frontend",
       site: "https://tabernacle.school",
+      info: "https://github.com/MattPereira/tabernacle-frontend#readme",
     },
     languages: ["Javascript, HTML, CSS"],
     technologies: ["React, Material-UI, Strapi, Heroku, Surge"],

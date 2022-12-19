@@ -5,7 +5,6 @@ import { skillsImage } from "../../utils/skillsImages";
 
 import { Typography, Container, Grid, Box, Paper } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import "./Skills.scss";
 
 const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -24,15 +23,18 @@ const Skills = () => {
       name: "Front-End",
       skills: ["html", "css", "react", "bootstrap", "materialui"],
     },
-    { name: "Back-End", skills: ["express", "flask", "postgresql", "nodejs"] },
+    {
+      name: "Back-End",
+      skills: ["nodejs", "expressjs", "postgresql", "flask"],
+    },
     {
       name: "Tools",
-      skills: ["git", "github", "docker", "figma", "firebase", "gcp"],
+      skills: ["git", "github", "docker", "firebase", "gcp", "figma"],
     },
   ];
 
   return (
-    <Container sx={{ mt: 5 }} id="skills">
+    <Container sx={{ pt: 10, pb: 5 }} id="skills">
       <Box sx={{ mb: 1 }}>
         <Typography variant="h2" color="text.primary">
           <AnimatedLetters
@@ -53,7 +55,7 @@ const Skills = () => {
           <Paper
             elevation={0}
             sx={{
-              mb: 5,
+              mb: 3,
               backgroundColor: theme.palette.background.paper,
               p: 3,
               borderRadius: "30px",
@@ -80,7 +82,11 @@ const Skills = () => {
                       component="img"
                       src={skillsImage(skill)}
                       alt={skill}
-                      sx={{ width: "75%", maxHeight: "150px", mb: 1 }}
+                      sx={{
+                        objectFit: "contain",
+                        width: "100%",
+                        maxHeight: "100px",
+                      }}
                     />
                   </Box>
 

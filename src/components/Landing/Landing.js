@@ -14,20 +14,27 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
   backgroundColor: "#EA526F",
   color: "white",
   padding: "1rem",
+  "&:hover": {
+    color: "black",
+    backgroundColor: "white",
+  },
 }));
 
 const socials = [
   {
     url: "https://github.com/MattPereira",
     icon: <GitHubIcon fontSize="large" />,
+    color: "#070600",
   },
   {
     url: "https://www.linkedin.com/in/-matt-pereira-/",
     icon: <LinkedInIcon fontSize="large" />,
+    color: "#EA526F",
   },
   {
     url: "https://twitter.com/__MattPereira__",
     icon: <TwitterIcon fontSize="large" />,
+    color: "#1DA1F2",
   },
 ];
 
@@ -47,7 +54,7 @@ const Landing = () => {
     <section id="landing">
       <Box
         sx={{
-          py: { xs: 20, sm: 30, lg: 40 },
+          py: { xs: 15, sm: 25, lg: 40 },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -57,7 +64,7 @@ const Landing = () => {
           <Grid container alignItems="center" justifyContent="center">
             <Grid
               item
-              md={6}
+              md={5}
               lg={5}
               sx={{
                 textAlign: "center",
@@ -69,7 +76,7 @@ const Landing = () => {
                 sx={{
                   width: { xs: "350px", lg: "400px" },
                   height: { xs: "350px", lg: "400px" },
-                  backgroundColor: theme.palette.background.paper,
+                  backgroundColor: "text.primary",
                   borderRadius: "100%",
                   display: "flex",
                   justifyContent: "center",
@@ -93,30 +100,31 @@ const Landing = () => {
             </Grid>
             <Grid
               item
-              md={6}
+              md={7}
               lg={7}
               sx={{ color: theme.palette.background.paper }}
             >
               <Box
                 sx={{
-                  backgroundColor: theme.palette.background.paper,
+                  backgroundColor: "text.primary",
                   borderRadius: "10px",
                   textAlign: "center",
+                  p: 1.5,
+                  mb: 1,
                 }}
               >
                 <Typography
                   variant="h1"
                   sx={{
-                    mb: 1,
                     fontFamily: "Cubano",
                     letterSpacing: "3px",
-                    color: "text.primary",
-
+                    color: "text.secondary",
+                    whiteSpace: "nowrap",
                     fontSize: {
-                      xs: "2.5rem",
-                      sm: "3.5rem",
-                      md: "3.5rem",
-                      lg: "5rem",
+                      xs: "2.55rem",
+                      sm: "4rem",
+                      md: "4.5rem",
+                      lg: "5.5rem",
                     },
                   }}
                 >
@@ -145,6 +153,7 @@ const Landing = () => {
                         target="_blank"
                         rel="noreferrer"
                         variant="contained"
+                        sx={{ backgroundColor: social.color }}
                       >
                         {social.icon}
                       </StyledIconButton>

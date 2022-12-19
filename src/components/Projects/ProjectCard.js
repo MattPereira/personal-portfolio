@@ -2,8 +2,9 @@ import { Grid, Paper, Box, Link, Button } from "@mui/material";
 
 import { styled, useTheme } from "@mui/material/styles";
 
-import CodeIcon from "@mui/icons-material/Code";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
+import InfoIcon from "@mui/icons-material/Info";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#EA526F",
@@ -11,9 +12,10 @@ const StyledButton = styled(Button)(({ theme }) => ({
   padding: "1rem",
   borderRadius: "15px",
   width: "100%",
+  fontFamily: "Roboto",
   "&:hover": {
-    backgroundColor: "#EA526F",
-    color: "white",
+    backgroundColor: "white",
+    color: "black",
   },
 }));
 
@@ -26,21 +28,14 @@ const ProjectCard = ({
       <Paper
         elevation={0}
         sx={{
-          // mb: 5,
+          mb: 3,
           borderRadius: "30px",
           backgroundColor: theme.palette.background.paper,
           // height: "100%",
         }}
       >
         <Grid container>
-          <Grid item xs={12}>
-            {/* <Box
-              sx={{
-                backgroundColor: "black",
-                borderRadius: "30px",
-                textAlign: "center",
-              }}
-            > */}
+          <Grid item xs={12} md={12}>
             <Box
               component="img"
               src={image}
@@ -51,31 +46,43 @@ const ProjectCard = ({
                 objectFit: "cover",
                 objectPosition: "top",
                 borderRadius: "30px",
+                overflowY: "scroll",
               }}
             />
-            {/* </Box> */}
           </Grid>
           <Grid item xs={12}>
-            <Box sx={{ p: 3 }}>
+            <Box sx={{ p: 2 }}>
               <Grid container spacing={2}>
-                <Grid item xs={6}>
+                <Grid item xs={4}>
                   <StyledButton
                     component={Link}
                     href={links.github}
                     variant="contained"
                     target="_blank"
+                    sx={{ backgroundColor: "black" }}
                   >
-                    <CodeIcon /> Code
+                    <GitHubIcon sx={{ mr: 1 }} /> Code
                   </StyledButton>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={4}>
+                  <StyledButton
+                    href={links.info}
+                    target="_blank"
+                    component={Link}
+                    variant="contained"
+                    sx={{ bgcolor: "#1DA1F2" }}
+                  >
+                    <InfoIcon sx={{ mr: 1 }} /> Info
+                  </StyledButton>
+                </Grid>
+                <Grid item xs={4}>
                   <StyledButton
                     href={links.site}
                     target="_blank"
                     component={Link}
                     variant="contained"
                   >
-                    <LanguageIcon /> Site
+                    <LanguageIcon sx={{ mr: 1 }} /> Live
                   </StyledButton>
                 </Grid>
               </Grid>
